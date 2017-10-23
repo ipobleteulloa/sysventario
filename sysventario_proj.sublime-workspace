@@ -1,0 +1,514 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Zebr",
+				"Zebras"
+			],
+			[
+				"de",
+				"debaja"
+			],
+			[
+				"impre",
+				"impresoras"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"last",
+				"lastimpid"
+			],
+			[
+				"col",
+				"col-md-12"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/app.php",
+			"settings":
+			{
+				"buffer_size": 9181,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 1407,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/view.php",
+			"settings":
+			{
+				"buffer_size": 1004,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 524.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp64/www/sysventario",
+		"/C/wamp64/www/sysventario/app",
+		"/C/wamp64/www/sysventario/config"
+	],
+	"file_history":
+	[
+		"/C/wamp64/www/laravel/inventario/resources/views/zebras/index.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/zebras/edit.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/zebras/create.blade.php",
+		"/C/wamp64/www/SySVentario/routes/web.php",
+		"/C/wamp64/www/laravel/inventario/app/Zebras.php",
+		"/C/wamp64/www/laravel/inventario/app/Http/Controllers/ZebrasController.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_22_214916_rename_zebras_estado.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_22_214254_rename_impresoras_estado.php",
+		"/C/wamp64/www/laravel/inventario/routes/web.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/okidatas/index.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/layouts/main.blade.php",
+		"/C/Users/IPoblete/Downloads/okis.sql",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_21_142004_create_okidatas_table.php",
+		"/C/wamp64/www/laravel/inventario/app/Http/Controllers/SistemaOperativoController.php",
+		"/C/wamp64/www/laravel/inventario/app/Http/Controllers/ImpresorasController.php",
+		"/C/wamp64/www/laravel/inventario/app/Impresora.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/impresoras/create.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/impresoras/edit.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/impresoras/index.blade.php",
+		"/C/wamp64/www/laravel/inventario/app/Http/Controllers/OkidataController.php",
+		"/C/wamp64/www/laravel/inventario/app/Okidata.php",
+		"/C/wamp64/www/laravel/inventario/app/Estado.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_22_214142_rename_impresora_estado.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_22_213725_rename_estado_column.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_22_211831_create_estados_table.php",
+		"/C/wamp64/www/laravel/inventario/app/Estados.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/layouts/nav.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/okidatas/edit.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/okidatas/create.blade.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_20_202850_create_estados_table.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/sistemaoperativo/index.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/sistemaoperativo/edit.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/sistemaoperativo/create.blade.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_20_202641_create_estados_table.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_20_142152_create_sistema_operativo_table.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/so/index.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/so/create.blade.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/so/edit.blade.php",
+		"/C/wamp64/www/laravel/inventario/app/SistemaOperativo.php",
+		"/C/wamp64/www/laravel/inventario/public/vendor/datatables/jquery.dataTables.js",
+		"/C/wamp64/www/laravel/inventario/resources/views/layouts/footer.blade.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_20_142152_create_sistema_operativos_table.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_20_140715_create_sist_ops_table.php",
+		"/C/wamp64/www/laravel/inventario/app/SistOp.php",
+		"/C/wamp64/www/laravel/inventario/app/Http/Controllers/SOController.php",
+		"/C/wamp64/www/laravel/inventario/public/vendor/datatables/dataTables.bootstrap4.js",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_13_194102_agrega_columna_tipoconex_a_tabla_impresoras.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_19_025219_agrega_columna_tipoconex_a_tabla_zebras.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/layouts/errors.blade.php",
+		"/C/wamp64/www/laravel/inventario/public/css/app.css",
+		"/C/wamp64/www/laravel/inventario/public/css/funkyradio.css",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_09_28_202447_create_impresoras_table.php",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_17_174249_create_zebras_table.php",
+		"/C/wamp64/www/laravel/inventario/resources/views/impresoras/show.blade.php",
+		"//192.168.0.112/Altagestion/Consultas/Consultores/raspberryv/xfade2.js",
+		"//192.168.0.112/Altagestion/Consultas/Consultores/consultor/consultor_propaganda.asp",
+		"//192.168.0.112/Altagestion/Consultas/Consultores/raspberryv/consultor_propaganda.asp",
+		"//192.168.0.112/Altagestion/Consultas/Consultores/raspberryv/consultor_datos.asp",
+		"//192.168.0.112/Altagestion/Consultas/Consultores/raspberryv/consultor.asp",
+		"/C/wamp64/www/laravel/inventario/database/migrations/2017_10_07_210807_help.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"C:\\wamp64\\www\\laravel\\inventario\\"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"estado",
+			"zebras",
+			"Zebras",
+			"zebras",
+			"nom_zebra",
+			"$zebra",
+			"Impresora Oki ",
+			"</p>",
+			"<p>",
+			"okidata/",
+			"url('okidata/",
+			"$oki",
+			"nom_zebra",
+			"$zebra",
+			"zebra",
+			"Zebra",
+			"Zebras",
+			"zebras",
+			"Zebras",
+			"zebra",
+			"estado",
+			"zebra",
+			"nom_zebra",
+			"zebra",
+			"zebras",
+			"zebra",
+			"estado",
+			"zebra",
+			"nom_zebra",
+			"zebra",
+			"zeb",
+			"zebra",
+			"zeb",
+			"lastzebid",
+			"zebras",
+			"ZebrasController",
+			"ImpresorasController",
+			"impresoras",
+			"so",
+			"sistema_operativos",
+			"zebra",
+			"zebras",
+			"zebra",
+			"nom_so",
+			"No data",
+			"no data",
+			"Show",
+			"show",
+			"nom_imp",
+			"impresora",
+			"Impresora",
+			"nom_imp",
+			"impresora",
+			"impresoras",
+			"@",
+			"css",
+			"impresoras",
+			"IMP",
+			"imp",
+			"Impresora",
+			"impresoras",
+			"imp",
+			"tipoconexion",
+			"Impresora",
+			"Impresoras",
+			"impresora",
+			"impresoras",
+			"Impresora",
+			"impresoras",
+			"zebra",
+			"impresora",
+			"impresoras",
+			"Impresoras",
+			"Con",
+			"impresoras",
+			"Impresoras",
+			"impresoras",
+			"Impresoras",
+			"impresoras",
+			"Impresoras",
+			"impresoras",
+			"Impresoras",
+			"impresoras",
+			"Impresoras",
+			"impresoras",
+			"raspbe",
+			"font",
+			"text",
+			"default"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"estado_id",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/app.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9181,
+								9181
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1218,
+								1218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/view.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "sysventario_proj.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"web",
+				"routes\\web.php"
+			],
+			[
+				"zebras",
+				"app\\Http\\Controllers\\ZebrasController.php"
+			],
+			[
+				"impresor",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"zeb",
+				"app\\Http\\Controllers\\ZebrasController.php"
+			],
+			[
+				"impres",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"create",
+				"resources\\views\\impresoras\\create.blade.php"
+			],
+			[
+				"impresoras",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"impreso",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"impresorascp",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"impresorasc",
+				"app\\Http\\Controllers\\ImpresorasController.php"
+			],
+			[
+				"zebra",
+				"app\\Http\\Controllers\\ZebrasController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 365.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

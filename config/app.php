@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/laravel/inventario/'),
+    'url' => env('APP_URL', 'http://localhost/sysventario/'),
 
     /*
     |--------------------------------------------------------------------------
