@@ -1,0 +1,146 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Impresora;
+use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\DB;
+
+class ImpresorasController extends Controller
+{
+    public function index()
+	{
+		$impresoras = Impresora::all();
+		$location = "index";
+		return view('impresoras.index',compact('impresoras','location'));
+	}
+	
+	public function show(Impresora $codigo)
+	{
+		//$impresora = DB::table('impresoras')->where('codigo', $codigo )->first();
+		
+		return $codigo;
+		//$impresora = Impresora::mostrar($codigo);
+		//return view('impresoras.show',compact('impresora'));
+	}
+	
+	public function activas()
+	{
+		$impresoras = Impresora::activas();
+		$location = "activas";
+		return view('impresoras.index',compact('impresoras','location'));
+	}
+	
+	public function debaja()
+	{
+		$impresoras = Impresora::debaja();
+		$location = "debaja";
+		return view('impresoras.index',compact('impresoras','location'));
+	}
+
+	public function create()
+	{
+		return view('impresoras.create');
+	}
+		
+	public function store()
+	{
+		/*$imp = new \App\Impresora;
+		$imp->nom_imp = request(nom_imp);
+		$imp->marca = request(marca);
+		$imp->modelo = request(modelo);
+		$imp->insumos = request(insumos);
+		$imp->ubicacion = request(ubicacion);
+		$imp->estado_id = request(radio);
+		$imp->save();*/
+
+		$this->validate(request(), [
+
+			'nom_imp' => 'required',
+			'marca' => 'required',
+			'modelo' => 'required'
+		]);
+
+		$imp = Impresora::create(request((['nom_imp', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+		$lastimpid = $imp->id;
+		if (strlen($lastimpid) == 1) 
+			$codigo = "IMP00".$lastimpid;	
+		elseif (strlen($lastimpid) == 2)
+			$codigo = "IMP0".$lastimpid;
+		elseif (strlen($lastimpid) == 3)
+			$codigo = "IMP".$lastimpid;
+		
+
+
+		/*Requiere use Illuminate\Support\Facades\DB;
+		DB::table('impresoras')
+            ->where('id', $lastimpid)
+            ->update(['codigo' => $codigo]);*/
+
+        //Reemplaza a las lineas comentadas anteriores
+        $impres = Impresora::find($imp->id);
+        $impres->codigo = $codigo;
+        $impres->save();    
+
+		return redirect('/impresoras');
+	}
+
+
+	 /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Impresora  $impresora
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Impresora $impresora) // edit(Impresora $impresora)
+    {
+        return view('impresoras.edit',compact('impresora'));
+    }
+	
+
+	/**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Impresora $impresora
+     * @return \Illuminate\Http\Response
+     */
+	public function update(Request $request, Impresora $impresora)
+    {
+    	//Validaciones para el boton "Dar de baja"
+    	if($impresora['estado_id']!='2' && $request['dardebaja'] == 'dardebaja'){
+    		$impresora->estado_id = '2';
+    		$impresora->save();
+       	}
+       	else {
+
+	       	$this->validate(request(), [
+
+				'nom_imp' => 'required',
+				'marca' => 'required',
+				'modelo' => 'required'
+			]);
+		
+			$modificaciones = request((['nom_imp', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id']));
+			$impresora->update($modificaciones);
+		}
+    	return redirect('/impresoras');
+    }
+
+
+	public function destroy($id)
+    {
+    	// Para eliminar utilizar el siguiente código en blade
+    	/*
+	    	<form action="{{ url('impresoras/'. $impresora->id) }}" method="POST" onsubmit="return confirm('¿Confirmar eliminaci&oacute;n?')">
+	            {{ method_field('delete') }}
+	            {{ csrf_field() }}
+	            <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+	        </form>
+		*/
+    	$impresora = Impresora::find($id);
+    	$impresora->delete();
+    	return redirect('/impresoras');
+    }
+	
+}
