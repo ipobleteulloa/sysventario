@@ -11,7 +11,7 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleInputName">Nombre zebra</label>
-                <input class="form-control" id="InputNombre" name="nom_zebra" type="text" placeholder="Ingrese el nombre" required>
+                <input class="form-control" id="InputNombre" name="nombre" type="text" placeholder="Ingrese el nombre" required>
               </div>
     			  </div>
           </div>  

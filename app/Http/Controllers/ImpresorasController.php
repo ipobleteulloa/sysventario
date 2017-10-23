@@ -46,7 +46,7 @@ class ImpresorasController extends Controller
 	public function store()
 	{
 		/*$imp = new \App\Impresora;
-		$imp->nom_imp = request(nom_imp);
+		$imp->nombre = request(nombre);
 		$imp->marca = request(marca);
 		$imp->modelo = request(modelo);
 		$imp->insumos = request(insumos);
@@ -56,12 +56,12 @@ class ImpresorasController extends Controller
 
 		$this->validate(request(), [
 
-			'nom_imp' => 'required',
+			'nombre' => 'required',
 			'marca' => 'required',
 			'modelo' => 'required'
 		]);
 
-		$imp = Impresora::create(request((['nom_imp', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+		$imp = Impresora::create(request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id'])));
 		$lastimpid = $imp->id;
 		if (strlen($lastimpid) == 1) 
 			$codigo = "IMP00".$lastimpid;	
@@ -116,12 +116,12 @@ class ImpresorasController extends Controller
 
 	       	$this->validate(request(), [
 
-				'nom_imp' => 'required',
+				'nombre' => 'required',
 				'marca' => 'required',
 				'modelo' => 'required'
 			]);
 		
-			$modificaciones = request((['nom_imp', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id']));
+			$modificaciones = request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id']));
 			$impresora->update($modificaciones);
 		}
     	return redirect('/impresoras');

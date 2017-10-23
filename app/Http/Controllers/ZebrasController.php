@@ -39,11 +39,11 @@ class ZebrasController extends Controller
     {
         $this->validate(request(), [
 
-            'nom_zebra' => 'required',
+            'nombre' => 'required',
             'modelo' => 'required'
         ]);
 
-        $zeb = Zebras::create(request((['nom_zebra', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+        $zeb = Zebras::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id'])));
         $lastzebid = $zeb->id;
         if (strlen($lastzebid) == 1) 
             $codigo = "ZEB00".$lastzebid;
@@ -99,11 +99,11 @@ class ZebrasController extends Controller
 
             $this->validate(request(), [
 
-                'nom_zebra' => 'required',
+                'nombre' => 'required',
                 'modelo' => 'required'
             ]);
         
-            $modificaciones = request((['nom_zebra', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id']));
+            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id']));
             $zebra->update($modificaciones);
         }
         return redirect('/zebras');

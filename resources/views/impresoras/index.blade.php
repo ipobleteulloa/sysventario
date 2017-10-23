@@ -63,7 +63,7 @@
 				@foreach ($impresoras as $impresora)
 				<tr>
 					<td>{{ $impresora->codigo }}</td>
-					<td>{{ $impresora->nom_imp }}</td>
+					<td>{{ $impresora->nombre }}</td>
 					<td>{{ $impresora->marca }}</td>
 					<td>{{ $impresora->modelo }}</td>
 					<td>{{ $impresora->insumos }}</td>

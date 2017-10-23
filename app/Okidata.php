@@ -8,12 +8,12 @@ class Okidata extends Model
 {
     public static function activas()
 	{
-		return static::where('estado', 1)->get();
+		return static::where('estado_id', 1)->get();
 	}
 	
 	public static function debaja()
 	{
-		return static::where('estado', 2)->get();
+		return static::where('estado_id', 2)->get();
 	}
 	
 	public static function mostrar($codigo)

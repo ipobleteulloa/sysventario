@@ -119,4 +119,18 @@ class OkidataController extends Controller
     {
         //
     }
+
+    public function activas()
+    {
+        $okidatas = Okidata::activas();
+        $location = "activas";
+        return view('okidatas.index',compact('okidatas','location'));
+    }
+    
+    public function debaja()
+    {
+        $okidatas = Okidata::debaja();
+        $location = "debaja";
+        return view('okidatas.index',compact('okidatas','location'));
+    }
 }

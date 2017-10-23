@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-	<h2>{{ $impresora->nom_imp }}</h2>
+	<h2>{{ $impresora->nombre }}</h2>
 	<p>Cod {{ $impresora->codigo }}</p>
 	<p>Marca: {{ $impresora->marca }}</p>
 	<p>Modelo:{{ $impresora->modelo }}</p>

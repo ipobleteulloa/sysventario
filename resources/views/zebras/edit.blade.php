@@ -3,7 +3,7 @@
 @section ('content')
   
   <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Editar {{ $zebra->nom_zebra }}</div>
+      <div class="card-header">Editar {{ $zebra->nombre }}</div>
       <div class="card-body">
         <form method="POST" action="{{ URL::asset('/zebras/'. $zebra->id ) }}">
           {{ csrf_field() }}
@@ -20,7 +20,7 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleInputName">Nombre zebra</label>
-                <input class="form-control" id="InputNombre" name="nom_zebra" type="text" value="{{ $zebra->nom_zebra }}" required>
+                <input class="form-control" id="InputNombre" name="nombre" type="text" value="{{ $zebra->nombre }}" required>
               </div>
             </div>
           </div>  

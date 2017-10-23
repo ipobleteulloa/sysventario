@@ -61,7 +61,7 @@
 				@foreach ($zebras as $zebra)
 				<tr>
 					<td>{{ $zebra->codigo }}</td>
-					<td>{{ $zebra->nom_zebra }}</td>
+					<td>{{ $zebra->nombre }}</td>
 					<td>{{ $zebra->modelo }}</td>
 					<td>{{ $zebra->tipo_conexion }}</td>
 					<td>

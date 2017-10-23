@@ -3,7 +3,7 @@
 @section ('content')
   
   <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Editar {{ $impresora->nom_imp }}</div>
+      <div class="card-header">Editar {{ $impresora->nombre }}</div>
       <div class="card-body">
         <form method="POST" action="{{ URL::asset('/impresoras/'. $impresora->id ) }}">
           {{ csrf_field() }}
@@ -20,7 +20,7 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleInputName">Nombre impresora</label>
-                <input class="form-control" id="InputNombre" name="nom_imp" type="text" value="{{ $impresora->nom_imp }}" required>
+                <input class="form-control" id="InputNombre" name="nombre" type="text" value="{{ $impresora->nombre }}" required>
               </div>
             </div>
           </div>  

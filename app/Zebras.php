@@ -8,12 +8,12 @@ class Zebras extends Model
 {
     public static function activas()
 	{
-		return static::where('estado', 1)->get();
+		return static::where('estado_id', 1)->get();
 	}
 	
 	public static function debaja()
 	{
-		return static::where('estado', 2)->get();
+		return static::where('estado_id', 2)->get();
 	}
 	
 	public static function mostrar($codigo)
@@ -21,7 +21,7 @@ class Zebras extends Model
 		return static::where('codigo', $codigo )->first();
 	}
 
-	protected $fillable = ['codigo', 'nom_zebra', 'modelo', 'ubicacion', 'estado_id', 'created_at', 'updated_at', 'tipo_conexion'];
+	protected $fillable = ['codigo', 'nombre', 'modelo', 'ubicacion', 'estado_id', 'created_at', 'updated_at', 'tipo_conexion'];
 
 	public function estado()
     {
