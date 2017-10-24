@@ -66,6 +66,7 @@ return [
     */
 
     'timezone' => 'UTC',
+    //'timezone' => 'America/Punta_Arenas',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +79,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +177,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //Fechas en distintos idiomas
+        'Jenssegers\Date\DateServiceProvider',
+
 
     ],
 

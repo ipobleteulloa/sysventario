@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{ url('mantenciones/') }}">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Mantenciones</span>
           </a>

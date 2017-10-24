@@ -44,4 +44,9 @@ class Equipo extends Model
         return $this->hasMany('App\Red','codigo', 'codigo');
     }
 
+    public function mantenciones()
+    {
+        return $this->hasMany('App\Mantencion','codigo', 'codigo');
+    }
+
 }

@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+//Mantenciones
+Route::resource('mantenciones', 'MantencionController');
+
 //Equipos
 Route::get('/equipos/debaja', 'EquipoController@debaja');
 Route::get('/equipos/activos', 'EquipoController@activos');
