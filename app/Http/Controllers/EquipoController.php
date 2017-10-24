@@ -14,7 +14,9 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        //
+        $equipos = Equipo::all();
+        $location = "index";
+        return view("equipos.index", compact('equipos','location')); 
     }
 
     /**
@@ -24,7 +26,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipos.create');
     }
 
     /**
@@ -35,7 +37,25 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+
+            'nombre' => 'required'
+        ]);
+
+        $equipo =Equipo::create(request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'])));
+        $lastequipoid = $equipo->id;
+        if (strlen($lastequipoid) == 1) 
+            $codigo = "CMP00".$lastequipoid;
+        elseif (strlen($lastequipoid) == 2)
+            $codigo = "CMP0".$lastequipoid;
+        elseif (strlen($lastequipoid) == 3)
+            $codigo = "CMP".$lastequipoid;
+
+        $cmp = Equipo::find($equipo->id);
+        $cmp->codigo = $codigo;
+        $cmp->save();
+
+        return redirect('/equipos');
     }
 
     /**
@@ -57,7 +77,7 @@ class EquipoController extends Controller
      */
     public function edit(Equipo $equipo)
     {
-        //
+        return view('equipos.edit', compact('equipo'));
     }
 
     /**
@@ -69,7 +89,22 @@ class EquipoController extends Controller
      */
     public function update(Request $request, Equipo $equipo)
     {
-        //
+        //Validaciones para el boton "Dar de baja"
+        if($equipo['estado_id']!='2' && $request['dardebaja'] == 'dardebaja'){
+            $equipo->estado_id = '2';
+            $equipo->save();
+        }
+        else {
+
+            $this->validate(request(), [
+
+                'nombre' => 'required'
+            ]);
+        
+            $modificaciones = request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id']));
+            $equipo->update($modificaciones);
+        }
+        return redirect('/equipos');
     }
 
     /**
@@ -81,5 +116,19 @@ class EquipoController extends Controller
     public function destroy(Equipo $equipo)
     {
         //
+    }
+
+    public function activos()
+    {
+        $equipos = Equipo::activos();
+        $location = "activos";
+        return view('equipos.index',compact('equipos','location'));
+    }
+    
+    public function debaja()
+    {
+        $impresoras = Equipo::debaja();
+        $location = "debaja";
+        return view('equipos.index',compact('equipos','location'));
     }
 }

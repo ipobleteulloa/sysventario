@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+//Equipos
+Route::get('/equipos/debaja', 'EquipoController@debaja');
+Route::get('/equipos/activos', 'EquipoController@activos');
+Route::resource('equipos', 'EquipoController');
+
 //Impresoras
 
 /*Route::get('/impresoras', 'ImpresorasController@index');

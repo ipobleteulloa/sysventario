@@ -12,7 +12,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="{{ url('equipos/') }}">
             <i class="fa fa-fw fa-desktop"></i>
             <span class="nav-link-text">Equipos</span>
           </a>

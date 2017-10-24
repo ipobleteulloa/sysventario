@@ -22,6 +22,7 @@ class CreateEquiposTable extends Migration
             $table->string('hdd')->nullable();
             $table->string('placa_madre')->nullable();
             $table->string('ubicacion')->nullable();
+            $table->integer('sector_id')->nullable();
             $table->integer('estado_id')->nullable();
             $table->integer('sistemaoperativo_id')->nullable();
             $table->timestamps();
