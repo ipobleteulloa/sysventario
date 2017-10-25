@@ -65,8 +65,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-    //'timezone' => 'America/Punta_Arenas',
+    //'timezone' => 'UTC',
+    'timezone' => 'America/Santiago',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,8 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //Fechas en distintos idiomas
-        'Jenssegers\Date\DateServiceProvider',
-
+        //'Jenssegers\Date\DateServiceProvider',
+       // Jenssegers\Date\Date::class,
 
     ],
 
@@ -230,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Date' => Jenssegers\Date\Date::class,
 
     ],
 

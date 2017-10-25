@@ -33,7 +33,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Listado de impresoras
+          <i class="fa fa-table"></i> Listado de Impresoras
           <a href="{{ url('impresoras/create') }}" class="btn btn-primary f_right">Agregar Impresora</a>
         </div>
         <div class="card-body">

@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mantencion;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
-
-Date::setLocale('es');
+// use Carbon\Carbon;
 
 class MantencionController extends Controller
 {
@@ -17,7 +15,15 @@ class MantencionController extends Controller
      */
     public function index()
     {
-        $mantenciones = Mantencion::all();
+        $mantenciones = Mantencion::all()->sortByDesc("created_at");
+        // $mantenciones = Mantencion::orderBy('created_at')->get();
+
+        /*foreach ($mantenciones as $mantencion) {
+            Carbon::setLocale('es');
+            $mantencion->created_at = new Carbon($mantencion->created_at->toFormattedDateString()); 
+        }*/   
+
+    
         //$mantenciones
         //$createdAt = Carbon::parse($item['created_at']);
         return view('mantenciones.index', compact('mantenciones'));

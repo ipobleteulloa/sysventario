@@ -2,33 +2,13 @@
 
 @section ('content')
 	<!-- Breadcrumbs-->
+
       <ol class="breadcrumb">
-		@if ( $location  == "activos")
-			<li class="breadcrumb-item">
-				<a href="{{ url('equipos/') }}">Todas</a>
-			</li>
-			<li class="breadcrumb-item active">Activas</li>
-			<li class="breadcrumb-item">
-			  <a href="{{ url('equipos/debaja/') }}">De Baja</a>
-			</li>
-		
-		@elseif( $location  == "debaja")
-			<li class="breadcrumb-item">
-				<a href="{{ url('equipos/') }}">Todas</a>
-			</li>
-			<li class="breadcrumb-item">
-			  <a href="{{ url('equipos/activas/') }}">Activas</a>
-			</li>
-			<li class="breadcrumb-item active">De Baja</li>
-		@else
-			<li class="breadcrumb-item active">Todas</li>
-			<li class="breadcrumb-item">
-			  <a href="{{ url('equipos/activas/') }}">Activas</a>
-			</li>
-			<li class="breadcrumb-item">
-			  <a href="{{ url('equipos/debaja/') }}">De Baja</a>
-			</li>
-		@endif
+        <a href="{{ url('equipos/') }}" class="btn btn-secondary btn-sm submenu">Todos</a>
+        <a href="{{ url('equipos/activos') }}" class="btn btn-secondary btn-sm submenu">Activos</a>
+        <a href="{{ url('equipos/debaja') }}" class="btn btn-secondary btn-sm submenu">De baja</a>
+        <a href="{{ url('equipos/enrevision') }}" class="btn btn-secondary btn-sm submenu">En revisión</a>
+        <a href="{{ url('equipos/contingencia') }}" class="btn btn-secondary btn-sm submenu">Contingencia</a>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">

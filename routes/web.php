@@ -17,10 +17,13 @@ Route::get('/', function () {
 
 //Mantenciones
 Route::resource('mantenciones', 'MantencionController');
+Route::get('equipos/{equipo}/mantencion', 'MantencionController@create');
 
 //Equipos
-Route::get('/equipos/debaja', 'EquipoController@debaja');
 Route::get('/equipos/activos', 'EquipoController@activos');
+Route::get('/equipos/debaja', 'EquipoController@debaja');
+Route::get('/equipos/enrevision', 'EquipoController@enrevision');
+Route::get('/equipos/contingencia', 'EquipoController@contingencia');
 Route::resource('equipos', 'EquipoController');
 
 //Impresoras

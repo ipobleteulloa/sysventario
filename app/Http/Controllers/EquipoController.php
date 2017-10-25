@@ -121,14 +121,28 @@ class EquipoController extends Controller
     public function activos()
     {
         $equipos = Equipo::activos();
-        $location = "activos";
-        return view('equipos.index',compact('equipos','location'));
+        // $location = "activos";
+        return view('equipos.index',compact('equipos'));
     }
     
     public function debaja()
     {
-        $impresoras = Equipo::debaja();
-        $location = "debaja";
-        return view('equipos.index',compact('equipos','location'));
+        $equipos = Equipo::debaja();
+        // $location = "debaja";
+        return view('equipos.index',compact('equipos'));
+    }
+
+    public function enrevision()
+    {
+        $equipos = Equipo::enrevision();
+        // $location = "enrevision";
+        return view('equipos.index',compact('equipos'));
+    }
+    
+    public function contingencia()
+    {
+        $equipos = Equipo::contingencia();
+        // $location = "contingencia";
+        return view('equipos.index',compact('equipos'));
     }
 }
