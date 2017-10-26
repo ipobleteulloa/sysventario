@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Mantencion",
+				"MantencionController"
+			],
+			[
+				"sistema_",
+				"sistemaoperativo_id"
+			],
+			[
 				"Zebr",
 				"Zebras"
 			],
@@ -40,28 +48,128 @@
 	"buffers":
 	[
 		{
-			"file": "config/app.php",
+			"file": "app/Mantencion.php",
 			"settings":
 			{
-				"buffer_size": 9181,
+				"buffer_size": 993,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "composer.json",
+			"file": "app/Http/Controllers/MantencionController.php",
 			"settings":
 			{
-				"buffer_size": 1407,
+				"buffer_size": 2429,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/view.php",
+			"file": "/C/Users/IPoblete/Downloads/sysventario.sql",
 			"settings":
 			{
-				"buffer_size": 1004,
+				"buffer_size": 82085,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/ZebrasController.php",
+			"settings":
+			{
+				"buffer_size": 3773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2017_10_26_124211_rename_zebras_nombre.php",
+			"settings":
+			{
+				"buffer_size": 635,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Equipo.php",
+			"settings":
+			{
+				"buffer_size": 1300,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Impresora.php",
+			"settings":
+			{
+				"buffer_size": 943,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Okidata.php",
+			"settings":
+			{
+				"buffer_size": 925,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Zebras.php",
+			"settings":
+			{
+				"buffer_size": 924,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/web.php",
+			"settings":
+			{
+				"buffer_size": 3299,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 568,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/impresoras/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 2991,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/okidatas/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 3074,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/zebras/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 2845,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -99,10 +207,73 @@
 	[
 		"/C/wamp64/www/sysventario",
 		"/C/wamp64/www/sysventario/app",
-		"/C/wamp64/www/sysventario/config"
+		"/C/wamp64/www/sysventario/app/Http",
+		"/C/wamp64/www/sysventario/app/Http/Controllers",
+		"/C/wamp64/www/sysventario/app/Providers",
+		"/C/wamp64/www/sysventario/config",
+		"/C/wamp64/www/sysventario/database",
+		"/C/wamp64/www/sysventario/public",
+		"/C/wamp64/www/sysventario/resources",
+		"/C/wamp64/www/sysventario/resources/views",
+		"/C/wamp64/www/sysventario/resources/views/equipos",
+		"/C/wamp64/www/sysventario/resources/views/impresoras",
+		"/C/wamp64/www/sysventario/resources/views/layouts",
+		"/C/wamp64/www/sysventario/resources/views/mantenciones",
+		"/C/wamp64/www/sysventario/resources/views/okidatas",
+		"/C/wamp64/www/sysventario/resources/views/zebras",
+		"/C/wamp64/www/sysventario/routes",
+		"/C/wamp64/www/sysventario/storage"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/sysventario/resources/views/mantenciones/index.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/equipos/index.blade.php",
+		"/C/wamp64/www/sysventario/public/css/app.css",
+		"/C/wamp64/www/sysventario/app/Http/Controllers/EquipoController.php",
+		"/C/wamp64/www/sysventario/resources/views/mantenciones/create.blade.php",
+		"/C/wamp64/www/sysventario/app/Http/Controllers/ImpresorasController.php",
+		"/C/wamp64/www/sysventario/app/Http/Controllers/OkidataController.php",
+		"/C/wamp64/www/sysventario/app/Http/Controllers/ZebrasController.php",
+		"/C/wamp64/www/sysventario/database/migrations/2017_10_23_193505_create_reds_table.php",
+		"/C/Users/IPoblete/Downloads/red.sql",
+		"/C/wamp64/www/sysventario/vendor/jenssegers/date/README.md",
+		"/C/wamp64/www/sysventario/routes/web.php",
+		"/C/wamp64/www/sysventario/resources/views/layouts/nav.blade.php",
+		"/C/wamp64/www/sysventario/app/Equipo.php",
+		"/C/Users/IPoblete/Downloads/sectores.sql",
+		"/C/wamp64/www/sysventario/database/migrations/2017_10_24_154359_create_sectors_table.php",
+		"/C/wamp64/www/sysventario/config/app.php",
+		"/C/wamp64/www/sysventario/public/vendor/datatables/jquery.dataTables.js",
+		"/C/wamp64/www/sysventario/resources/views/layouts/footer.blade.php",
+		"/C/wamp64/www/sysventario/public/js/sb-admin-datatables.js",
+		"/C/wamp64/www/sysventario/public/js/sb-admin-datatables.min.js",
+		"/C/wamp64/www/sysventario/public/vendor/datatables/dataTables.bootstrap4.js",
+		"/C/Users/IPoblete/Downloads/equipos.sql",
+		"/C/wamp64/www/sysventario/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/js/d3.min.js",
+		"/C/wamp64/www/sysventario/vendor/jenssegers/date/src/Lang/zh.php",
+		"/C/wamp64/www/sysventario/public/vendor/chart.js/Chart.bundle.min.js",
+		"/C/wamp64/www/sysventario/vendor/nesbot/carbon/src/Carbon/Carbon.php",
+		"/C/wamp64/www/sysventario/public/vendor/chart.js/Chart.bundle.js",
+		"/C/wamp64/www/sysventario/app/Sector.php",
+		"/C/wamp64/www/sysventario/app/SistemaOperativo.php",
+		"/C/Users/IPoblete/Downloads/mantenciones.sql",
+		"/C/wamp64/www/sysventario/database/migrations/2017_10_24_155347_create_mantenciones_table.php",
+		"/C/wamp64/www/sysventario/resources/views/equipos/edit.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/equipos/create.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/zebras/index.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/zebras/edit.blade.php",
+		"/C/wamp64/www/sysventario/app/Okidata.php",
+		"/C/wamp64/www/sysventario/app/Zebras.php",
+		"/C/wamp64/www/sysventario/resources/views/impresoras/show.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/impresoras/index.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/impresoras/edit.blade.php",
+		"/C/wamp64/www/sysventario/resources/views/impresoras/create.blade.php",
+		"/C/wamp64/www/sysventario/app/Red.php",
+		"/C/wamp64/www/sysventario/database/migrations/2017_10_23_203658_rename_impresoras_nombre.php",
+		"/C/wamp64/www/sysventario/app/Impresora.php",
+		"/C/wamp64/www/sysventario/resources/views/zebras/create.blade.php",
+		"/C/wamp64/www/sysventario/database/migrations/2017_10_23_211120_create_equipos_table.php",
+		"/C/wamp64/www/sysventario/composer.json",
 		"/C/wamp64/www/laravel/inventario/resources/views/zebras/index.blade.php",
 		"/C/wamp64/www/laravel/inventario/resources/views/zebras/edit.blade.php",
 		"/C/wamp64/www/laravel/inventario/resources/views/zebras/create.blade.php",
@@ -173,6 +344,7 @@
 		"height": 104.0,
 		"where_history":
 		[
+			"C:\\wamp64\\www\\sysventario",
 			"C:\\wamp64\\www\\laravel\\inventario\\"
 		]
 	},
@@ -181,6 +353,91 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"zebra",
+			"\n        ",
+			"');\n",
+			"EquipoController",
+			"impresoras",
+			"equipos",
+			"okidatas",
+			"impresoras",
+			"equipos",
+			"Okidata",
+			"okidatas",
+			"Impresora",
+			"impresoras",
+			"Equipo",
+			"equipos",
+			"Equipo",
+			"activos",
+			"debaja",
+			"activos",
+			"Activas",
+			"\t\t\"",
+			"aaSorting",
+			"order",
+			"Carbon",
+			"Monday",
+			"December",
+			"Thursday",
+			"thursd",
+			"Thursday",
+			"oLanguage",
+			"lang",
+			"DataTable",
+			"lang",
+			"DataTable",
+			"jess",
+			"monday",
+			"datatables",
+			"provider",
+			"okidata",
+			"span",
+			"<span style=\"color: #333333; font-family: Verdana, sans-serif; font-size: 15.399999618530273px; font-style: italic; letter-spacing: 1px; text-align: center; -webkit-tap-highlight-color: rgba(0, 0, 0); -webkit-text-size-adjust: 100%;\">",
+			";",
+			"</span>",
+			"<span style=\"color: #333333; font-family: Verdana, sans-serif; font-size: 15.4px; font-style: italic; letter-spacing: 1px; line-height: 22px; text-align: center;\">",
+			"</p>",
+			"<p>",
+			"ZEB",
+			"IMP",
+			"OKI",
+			"\\(\\(*[0-9]*[0-9]*[0-9], ",
+			"\\(\\[1-9],",
+			"\\(2[1-9],",
+			"(..,",
+			"([1-9],",
+			"required",
+			"OkidataController",
+			"okidatas",
+			"zebra",
+			"Zebra",
+			"Zebras",
+			"zebras",
+			"ram",
+			"Ram",
+			"procesador",
+			"Procesador",
+			"zebra",
+			"zebras",
+			"Procesador",
+			"modelo",
+			"Modelo",
+			"zebra",
+			"zebras",
+			"zebra",
+			"okidata",
+			"OKI",
+			"$lastokiid",
+			"</p>",
+			"<p>",
+			"equipos",
+			"impresoras",
+			"estado",
+			"nom_zebra",
+			"nom_imp",
+			"'NOW()'",
+			"'),",
 			"estado",
 			"zebras",
 			"Zebras",
@@ -223,53 +480,7 @@
 			"sistema_operativos",
 			"zebra",
 			"zebras",
-			"zebra",
-			"nom_so",
-			"No data",
-			"no data",
-			"Show",
-			"show",
-			"nom_imp",
-			"impresora",
-			"Impresora",
-			"nom_imp",
-			"impresora",
-			"impresoras",
-			"@",
-			"css",
-			"impresoras",
-			"IMP",
-			"imp",
-			"Impresora",
-			"impresoras",
-			"imp",
-			"tipoconexion",
-			"Impresora",
-			"Impresoras",
-			"impresora",
-			"impresoras",
-			"Impresora",
-			"impresoras",
-			"zebra",
-			"impresora",
-			"impresoras",
-			"Impresoras",
-			"Con",
-			"impresoras",
-			"Impresoras",
-			"impresoras",
-			"Impresoras",
-			"impresoras",
-			"Impresoras",
-			"impresoras",
-			"Impresoras",
-			"impresoras",
-			"Impresoras",
-			"impresoras",
-			"raspbe",
-			"font",
-			"text",
-			"default"
+			"zebra"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -277,6 +488,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"(",
+			"",
+			"nombre",
+			"NOW()",
+			"', 'LAN', 'NOW()', 'NOW()'),",
 			"estado_id",
 			""
 		],
@@ -289,24 +506,52 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/app.php",
+					"file": "app/Mantencion.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9181,
+						"buffer_size": 993,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9181,
-								9181
+								906,
+								906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/MantencionController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								966,
+								966
 							]
 						],
 						"settings":
@@ -316,49 +561,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 94.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "composer.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1218,
-								1218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "config/view.php",
-					"semi_transient": true,
+					"file": "/C/Users/IPoblete/Downloads/sysventario.sql",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1004,
+						"buffer_size": 82085,
 						"regions":
 						{
 						},
@@ -371,6 +586,36 @@
 						],
 						"settings":
 						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Http/Controllers/ZebrasController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								823,
+								1454
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -379,7 +624,292 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "database/migrations/2017_10_26_124211_rename_zebras_nombre.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								611
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Equipo.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1296,
+								1186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Impresora.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								936,
+								936
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Okidata.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								922,
+								922
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/Zebras.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								916,
+								916
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1644,
+								1644
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 169.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "resources/views/impresoras/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2090,
+								2090
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 560.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "resources/views/okidatas/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2173,
+								2173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 511.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "resources/views/zebras/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1949,
+								1949
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 441.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -435,6 +965,46 @@
 		[
 			[
 				"web",
+				"routes\\web.php"
+			],
+			[
+				"mantencion",
+				"app\\Http\\Controllers\\MantencionController.php"
+			],
+			[
+				"zebr",
+				"app\\Http\\Controllers\\ZebrasController.php"
+			],
+			[
+				"",
+				"app\\Http\\Controllers\\ZebrasController.php"
+			],
+			[
+				"equio",
+				"app\\Http\\Controllers\\EquipoController.php"
+			],
+			[
+				"manten",
+				"app\\Http\\Controllers\\MantencionController.php"
+			],
+			[
+				"web.",
+				"routes\\web.php"
+			],
+			[
+				"equipo",
+				"app\\Http\\Controllers\\EquipoController.php"
+			],
+			[
+				"public.css",
+				"public\\css\\app.css"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"web.p",
 				"routes\\web.php"
 			],
 			[
