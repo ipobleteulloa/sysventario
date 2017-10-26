@@ -27,16 +27,26 @@ class ImpresorasController extends Controller
 	public function activas()
 	{
 		$impresoras = Impresora::activas();
-		$location = "activas";
-		return view('impresoras.index',compact('impresoras','location'));
+		return view('impresoras.index',compact('impresoras'));
 	}
 	
 	public function debaja()
 	{
 		$impresoras = Impresora::debaja();
-		$location = "debaja";
-		return view('impresoras.index',compact('impresoras','location'));
+		return view('impresoras.index',compact('impresoras'));
 	}
+
+	public function enrevision()
+    {
+        $impresoras = Impresora::enrevision();
+        return view('impresoras.index',compact('impresoras'));
+    }
+    
+    public function contingencia()
+    {
+        $impresoras = Impresora::contingencia();
+        return view('impresoras.index',compact('impresoras'));
+    }
 
 	public function create()
 	{
@@ -141,6 +151,12 @@ class ImpresorasController extends Controller
     	$impresora = Impresora::find($id);
     	$impresora->delete();
     	return redirect('/impresoras');
+    }
+
+    public function mantencion(Impresora $impresora)
+    {
+        $info = $impresora;
+        return view('mantenciones.create', compact('info'));
     }
 	
 }

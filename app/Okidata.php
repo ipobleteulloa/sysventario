@@ -15,6 +15,16 @@ class Okidata extends Model
 	{
 		return static::where('estado_id', 2)->get();
 	}
+
+	public static function enrevision()
+    {
+        return static::where('estado_id', 3)->get();
+    }
+    
+    public static function contingencia()
+    {
+        return static::where('estado_id', 4)->get();
+    }
 	
 	public static function mostrar($codigo)
 	{
@@ -27,4 +37,10 @@ class Okidata extends Model
     {
         return $this->belongsTo('App\Estado');
     }
+
+    public function mantenciones()
+    {
+        return $this->hasMany('App\Mantencion','codigo', 'codigo');
+    }
+    
 }

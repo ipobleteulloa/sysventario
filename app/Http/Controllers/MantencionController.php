@@ -47,7 +47,13 @@ class MantencionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+
+            'detalle' => 'required'
+        ]);
+
+        $mantencion = Mantencion::create(request((['codigo', 'detalle'])));
+        return redirect('/mantenciones');
     }
 
     /**

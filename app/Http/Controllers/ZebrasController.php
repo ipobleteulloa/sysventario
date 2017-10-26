@@ -133,4 +133,22 @@ class ZebrasController extends Controller
         $location = "debaja";
         return view('zebras.index',compact('zebras','location'));
     }
+
+    public function enrevision()
+    {
+        $zebras = Zebras::enrevision();
+        return view('zebras.index',compact('zebras'));
+    }
+    
+    public function contingencia()
+    {
+        $zebras = Zebras::contingencia();
+        return view('zebras.index',compact('zebras'));
+    }
+
+    public function mantencion(Zebras $zebra)
+    {
+        $info = $zebra;
+        return view('mantenciones.create', compact('info'));
+    }
 }

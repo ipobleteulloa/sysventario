@@ -20,10 +20,28 @@ class Mantencion extends Model
 {
     protected $table = 'mantenciones';
 
+    protected $fillable = ['codigo', 'detalle', 'created_at', 'updated_at'];
 
     public function equipo()
     {
         return $this->belongsTo('App\Equipo', 'codigo', 'codigo');
     }
+
+    public function impresora()
+    {
+        return $this->belongsTo('App\Impresora', 'codigo', 'codigo');
+    }
+
+    public function okidata()
+    {
+        return $this->belongsTo('App\Okidata', 'codigo', 'codigo');
+    }
+
+    public function zebra()
+    {
+        return $this->belongsTo('App\Zebras', 'codigo', 'codigo');
+    }
+
+
 
 }

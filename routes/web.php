@@ -17,13 +17,14 @@ Route::get('/', function () {
 
 //Mantenciones
 Route::resource('mantenciones', 'MantencionController');
-Route::get('equipos/{equipo}/mantencion', 'MantencionController@create');
+
 
 //Equipos
 Route::get('/equipos/activos', 'EquipoController@activos');
 Route::get('/equipos/debaja', 'EquipoController@debaja');
 Route::get('/equipos/enrevision', 'EquipoController@enrevision');
 Route::get('/equipos/contingencia', 'EquipoController@contingencia');
+Route::get('equipos/{equipo}/mantencion', 'EquipoController@mantencion');
 Route::resource('equipos', 'EquipoController');
 
 //Impresoras
@@ -37,15 +38,29 @@ Route::post('/impresoras', 'ImpresorasController@store');
 Route::delete('/impresoras/{id}', 'ImpresorasController@destroy');*/
 Route::get('/impresoras/debaja', 'ImpresorasController@debaja');
 Route::get('/impresoras/activas', 'ImpresorasController@activas');
+Route::get('/impresoras/enrevision', 'ImpresorasController@enrevision');
+Route::get('/impresoras/contingencia', 'ImpresorasController@contingencia');
+Route::get('impresoras/{impresora}/mantencion', 'ImpresorasController@mantencion');
 //Esta ruta reemplaza a todas las rutas comentadas
 Route::resource('impresoras', 'ImpresorasController');
-
 
 
 //Zebras
 Route::get('/zebras/debaja', 'ZebrasController@debaja');
 Route::get('/zebras/activas', 'ZebrasController@activas');
+Route::get('/zebras/enrevision', 'ZebrasController@enrevision');
+Route::get('/zebras/contingencia', 'ZebrasController@contingencia');
+Route::get('zebras/{zebra}/mantencion', 'ZebrasController@mantencion');
 Route::resource('zebras', 'ZebrasController');
+
+
+//Okidatas
+Route::get('/okidatas/debaja', 'OkidataController@debaja');
+Route::get('/okidatas/activas', 'OkidataController@activas');
+Route::get('/okidatas/enrevision', 'OkidataController@enrevision');
+Route::get('/okidatas/contingencia', 'OkidataController@contingencia');
+Route::get('okidatas/{okidata}/mantencion', 'OkidataController@mantencion');
+Route::resource('okidatas', 'OkidataController');
 
 
 //Sistema Operativo
@@ -57,7 +72,5 @@ Route::post('/sistemaoperativo', 'SistemaOperativoController@store');
 Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
 //Route::resource('sistemaoperativo', 'SistemaOperativoController'); //No funciona bien debido a no seguir la norma de nombres (tablas)
 
-//Okidatas
-Route::get('/okidatas/debaja', 'OkidataController@debaja');
-Route::get('/okidatas/activas', 'OkidataController@activas');
-Route::resource('okidatas', 'OkidataController');
+
+
