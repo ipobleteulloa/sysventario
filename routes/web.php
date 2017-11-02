@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'MantencionController@index');
 
 //Mantenciones
+Route::get('/mantenciones/buscar', 'MantencionController@buscar');
+Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete');
 Route::resource('mantenciones', 'MantencionController');
 
 
@@ -71,6 +71,5 @@ Route::patch('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController
 Route::post('/sistemaoperativo', 'SistemaOperativoController@store');
 Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
 //Route::resource('sistemaoperativo', 'SistemaOperativoController'); //No funciona bien debido a no seguir la norma de nombres (tablas)
-
 
 

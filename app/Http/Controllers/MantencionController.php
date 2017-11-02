@@ -100,4 +100,9 @@ class MantencionController extends Controller
     {
         //
     }
+
+    public function buscar()
+    {
+        return view('mantenciones.buscar');
+    }
 }
