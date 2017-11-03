@@ -1,12 +1,6 @@
 @extends ('layouts.main')
 
 @section ('content')
-<script>
-	$(document).ready(function() {
-    $('#dataTable').DataTable( {
-        "order": [[ 3, "desc" ]]
-    } );
-} );
 </script>
  	 <div class="card mb-3">
         <div class="card-header">
@@ -20,16 +14,16 @@
                 <tr>
                   <!-- <th>test</th> -->
                   <th>Codigo</th>
-				  <th>Nombre</th>
-				  <th>Detalle</th>
-				  <th>Fecha</th>
+        				  <th>Nombre</th>
+        				  <th>Detalle</th>
+        				  <th>Fecha</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                 	<!-- <th>test</th> -->
                   <th>Codigo</th>
-				  <th>Nombre</th>
+				          <th>Nombre</th>
                   <th>Detalle</th>
                   <th>Fecha</th>
                 </tr>
