@@ -3,9 +3,9 @@
 @section ('content')
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Listado de Sistemas Operativos
+          <i class="fa fa-table"></i> Listado de Sectores
           @if (Auth::check())
-          <a href="{{ url('sistemaoperativo/create') }}" class="btn btn-primary f_right">Agregar Sistema Operativo</a>
+          <a href="{{ url('sectores/create') }}" class="btn btn-primary f_right">Agregar Sector</a>
           @endif
         </div>
         <div class="card-body">
@@ -14,8 +14,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Arquitectura</th>
+        				  <th>Nombre</th>
                   @if (Auth::check())
                   <th>Acciones</th>
                   @endif
@@ -24,28 +23,26 @@
               <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Arquitectura</th>
+        				  <th>Nombre</th>
                   @if (Auth::check())
                   <th>Acciones</th>
                   @endif
                 </tr>
               </tfoot>
               <tbody>
-				@foreach ($sistop as $so)
+				@foreach ($sectores as $sector)
 				<tr>
-					<td>{{ $so->id }}</td>
-					<td>{{ $so->nombre }}</td>
-					<td>{{ $so->arquitectura }}</td>
+					<td>{{ $sector->id }}</td>
+					<td>{{ $sector->nombre }}</td>
 					@if (Auth::check())
           <td>
 						<div class="text-center">
 							<div class="acciones">
-				                <a href="{{ url('sistemaoperativo/'. $so->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
+				                <a href="{{ url('sectores/'. $sector->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
 				            </div>
 				            &nbsp;
 								<div class="acciones">
-									<form action="{{ url('sistemaoperativo/'. $so->id) }}" method="POST" onsubmit="return confirm('¿Confirmar eliminaci&oacute;n?')">
+									<form action="{{ url('sectores/'. $sector->id) }}" method="POST" onsubmit="return confirm('¿Confirmar eliminaci&oacute;n?')">
 						            {{ method_field('delete') }}
 						            {{ csrf_field() }}
 						            <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>

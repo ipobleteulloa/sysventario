@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MantencionController@index');
+Route::get('/', 'MantencionController@index')->name('home');
 
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
@@ -64,12 +64,26 @@ Route::resource('okidatas', 'OkidataController');
 
 
 //Sistema Operativo
-Route::get('/sistemaoperativo', 'SistemaOperativoController@index');
-Route::get('/sistemaoperativo/create', 'SistemaOperativoController@create');
+//Route::get('/sistemaoperativo', 'SistemaOperativoController@index');
+//Route::get('/sistemaoperativo/create', 'SistemaOperativoController@create');
 Route::get('/sistemaoperativo/{sistemaOperativo}/edit', 'SistemaOperativoController@edit');
 Route::patch('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@update');
-Route::post('/sistemaoperativo', 'SistemaOperativoController@store');
+//Route::post('/sistemaoperativo', 'SistemaOperativoController@store');
 Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
-//Route::resource('sistemaoperativo', 'SistemaOperativoController'); //No funciona bien debido a no seguir la norma de nombres (tablas)
+Route::resource('sistemaoperativo', 'SistemaOperativoController'); //No funciona bien debido a no seguir la norma de nombres (tablas)
 
 
+//Sectores
+//Route::get('/sectores', 'SectorController@index');
+Route::get('/sectores/{sector}/edit', 'SectorController@edit');
+Route::patch('/sectores/{sector}', 'SectorController@update');
+Route::delete('/sectores/{sector}', 'SectorController@destroy');
+Route::resource('sectores','SectorController');
+
+
+Route::get('/register', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+Route::get ('/login', 'SessionController@create')->name('login');
+Route::post ('/login', 'SessionController@store');
+Route::get ('/logout', 'SessionController@destroy');

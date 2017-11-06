@@ -5,7 +5,9 @@
  	 <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Listado de Mantenciones
+          @if (Auth::check())
           <a href="{{ url('mantenciones/create') }}" class="btn btn-primary f_right">Agregar mantención</a>
+          @endif
         </div>
         <div class="card-body">
           <div class="table-responsive">

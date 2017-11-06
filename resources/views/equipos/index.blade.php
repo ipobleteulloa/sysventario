@@ -22,10 +22,12 @@
           <thead>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
-			  <!-- <th>Ubicación</th> -->
+              <th>Nombre</th>
+              <!-- <th>Ubicación</th> -->
               <th>Sector</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </thead>
           <tfoot>
@@ -34,7 +36,9 @@
 			  <th>Nombre</th>
               <!-- <th>Ubicación</th> -->
               <th>Sector</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </tfoot>
           <tbody>
@@ -44,7 +48,8 @@
 				<td>{{ $equipo->nombre }}</td>
 				<!-- <td>{{ $equipo->ubicacion }}</td> -->
 				<td>{{ $equipo->sector->nombre }}</td>
-				<td>
+				@if (Auth::check())
+        <td>
 					<div class="text-center">
 						<div class="acciones">
 			                <a href="{{ url('equipos/'. $equipo->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
@@ -66,6 +71,7 @@
 				        @endif
 					</div>
 				</td>
+        @endif
 			</tr>
 			@endforeach		
           </tbody>

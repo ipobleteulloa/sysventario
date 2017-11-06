@@ -13,7 +13,9 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fa fa-table"></i> Listado de Impresoras
+      @if (Auth::check())
       <a href="{{ url('impresoras/create') }}" class="btn btn-primary f_right">Agregar Impresora</a>
+      @endif
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -21,21 +23,25 @@
           <thead>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
+              <th>Nombre</th>
               <th>Marca</th>
-			  <th>Modelo</th>
+              <th>Modelo</th>
               <th>Insumos</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
+              <th>Nombre</th>
               <th>Marca</th>
-			  <th>Modelo</th>
+              <th>Modelo</th>
               <th>Insumos</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </tfoot>
           <tbody>
@@ -46,7 +52,8 @@
 				<td>{{ $impresora->marca }}</td>
 				<td>{{ $impresora->modelo }}</td>
 				<td>{{ $impresora->insumos }}</td>
-				<td>
+				@if (Auth::check())
+        <td>
 					<div>  <!-- class="text-center" -->
 						<div class="acciones">
 			                <a href="{{ url('impresoras/'. $impresora->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
@@ -68,6 +75,7 @@
 				        @endif
 					</div>
 				</td>
+        @endif
 			</tr>
 			@endforeach		
           </tbody>

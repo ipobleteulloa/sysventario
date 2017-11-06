@@ -13,7 +13,9 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fa fa-table"></i> Listado de Okidatas
+      @if (Auth::check())
       <a href="{{ url('okidatas/create') }}" class="btn btn-primary f_right">Agregar Okidata</a>
+      @endif
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -25,7 +27,9 @@
 			  <th>Modelo</th>
 			  <th>Posee USB</th>
               <th>Tipo de conexi&oacute;n</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </thead>
           <tfoot>
@@ -35,7 +39,9 @@
               <th>Modelo</th>
               <th>Posee USB</th>
               <th>Tipo de conexi&oacute;n</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </tfoot>
           <tbody>
@@ -53,6 +59,7 @@
 					@endif
 				</td>
 				<td>{{ $okidata->tipo_conexion }}</td>
+				@if (Auth::check())
 				<td>
 					<div class="text-center">
 						<div class="acciones">
@@ -75,6 +82,7 @@
 				        @endif
 					</div>
 				</td>
+				@endif
 			</tr>
 			@endforeach		
           </tbody>

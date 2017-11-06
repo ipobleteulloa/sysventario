@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ImpresorasController extends Controller
 {
+
+	public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy', 'mantencion']]);
+
+    }
+    
     public function index()
 	{
 		$impresoras = Impresora::all();

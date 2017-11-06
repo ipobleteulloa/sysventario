@@ -13,7 +13,9 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fa fa-table"></i> Listado de Zebras
+      @if (Auth::check())
       <a href="{{ url('zebras/create') }}" class="btn btn-primary f_right">Agregar Zebra</a>
+      @endif
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -21,19 +23,23 @@
           <thead>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
-			  <th>Modelo</th>
+              <th>Nombre</th>
+              <th>Modelo</th>
               <th>Tipo de conexi&oacute;n</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
+              <th>Nombre</th>
               <th>Modelo</th>
               <th>Tipo de conexi&oacute;n</th>
+              @if (Auth::check())
               <th>Acciones</th>
+              @endif
             </tr>
           </tfoot>
           <tbody>
@@ -43,7 +49,8 @@
 				<td>{{ $zebra->nombre }}</td>
 				<td>{{ $zebra->modelo }}</td>
 				<td>{{ $zebra->tipo_conexion }}</td>
-				<td>
+				@if (Auth::check())
+        <td>
 					<div class="text-center">
 						<div class="acciones">
 			                <a href="{{ url('zebras/'. $zebra->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
@@ -65,6 +72,7 @@
 				        @endif
 					</div>
 				</td>
+        @endif
 			</tr>
 			@endforeach		
           </tbody>

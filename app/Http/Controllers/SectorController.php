@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SistemaOperativo;
+use App\Sector;
 use Illuminate\Http\Request;
 
-class SistemaOperativoController extends Controller
+class SectorController extends Controller
 {
     public function __construct()
     {
@@ -20,8 +20,8 @@ class SistemaOperativoController extends Controller
      */
     public function index()
     {
-        $sistop = SistemaOperativo::all();
-        return view("sistemaoperativo.index", compact('sistop'));
+        $sectores = Sector::all();
+        return view("sectores.index", compact('sectores'));
     }
 
     /**
@@ -31,7 +31,7 @@ class SistemaOperativoController extends Controller
      */
     public function create()
     {
-        return view('sistemaoperativo.create');
+        return view('sectores.create');
     }
 
     /**
@@ -45,21 +45,21 @@ class SistemaOperativoController extends Controller
         $this->validate(request(), [
 
             'nombre' => 'required',
-            'arquitectura' => 'required|integer'
         ]);
 
-        $sistop = SistemaOperativo::create(request((['nombre', 'arquitectura'])));
+        $sect = Sector::create(request((['nombre'])));
 
-        return redirect('/sistemaoperativo');
+        return redirect('/sectores');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SistemaOperativo  $sistemaOperativo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SistemaOperativo $sistemaOperativo)
+    public function show(Sector $sectores)
     {
         //
     }
@@ -67,42 +67,41 @@ class SistemaOperativoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SistemaOperativo  $sistemaOperativo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SistemaOperativo $sistemaOperativo)
+    public function edit(Sector $sector)
     {
-        return view('sistemaoperativo.edit',compact('sistemaOperativo'));
+        return view('sectores.edit',compact('sector'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SistemaOperativo  $sistemaOperativo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SistemaOperativo $sistemaOperativo)
+    public function update(Request $request, Sector $sector)
     {
         $this->validate(request(), [
-            'nombre' => 'required',
-            'arquitectura' => 'required|integer'
+            'nombre' => 'required'
         ]);
 
-        $modificaciones = request((['nombre', 'arquitectura']));
-        $sistemaOperativo->update($modificaciones);
-        return redirect('/sistemaoperativo');
+        $modificaciones = request((['nombre']));
+        $sector->update($modificaciones);
+        return redirect('/sectores');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SistemaOperativo  $sistemaOperativo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SistemaOperativo $sistemaOperativo)
+    public function destroy(Sector $sector)
     {
-        $sistemaOperativo->delete();
-        return redirect('/sistemaoperativo');
+        $sector->delete();
+        return redirect('/sectores');
     }
 }
