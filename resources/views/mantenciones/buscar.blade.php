@@ -15,7 +15,9 @@
                 <label for="buscar">Buscar:</label>
                 <input class="form-control" id="buscar">
                 <input class="form-control" type="hidden" id="codigo">
-
+                <br/>
+                <a href="#" id="boton" class="btn btn-primary">Agregar mantención</a>
+                <!-- <input type="submit"> -->
                 <script type="text/javascript">
                       $( document ).ready(function() {
                         var options = {
@@ -64,13 +66,14 @@
 
                               $("#codigo").val(value).trigger("change");
 
-                              var tipo;
+                              var tipo=0;
                               //var codigo = $("#codigo").val();
                               var cod = value.substr(0, 3);
                               var num = value.substr(3, 3);
-                              num.replace(/^0+/, '');
-                              alert(cod);
-                              switch (cod) {
+                              //num.replace(/^0+/, '');
+                              num = num.replace(/^0+/, '');
+                              
+                              /*switch (cod) {
                                   case CMP:
                                       tipo = "equipos";
                                       break;
@@ -83,10 +86,20 @@
                                   case ZEB:
                                       tipo = "zebras";
                                       break;
-                              }
+                              }*/
+                              if (cod=="CMP")
+                                tipo = "equipos";
+                              if (cod=="IMP")
+                                tipo = "impresoras";
+                              if (cod=="OKI")
+                                tipo = "okidatas";
+                              if (cod=="ZEB")
+                                tipo = "zebras";
+                              //alert(tipo);
                               //var aurl = '\{\{ URL::asset(\' /' + tipo + '/' + num + '/mantencion\') \}\}';
-                              //$("#searchForm").attr("action", aurl);
-                              alert(cod);
+                              var aurl = '../' + tipo + '/' + num + '/mantencion';
+                              $("#boton").attr("href", aurl);
+                              //alert(aurl);
                             }
                         },
 
