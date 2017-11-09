@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Sysventario</title>
+  <title>SySVentario</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -40,9 +40,9 @@
           <input type="submit" class="btn btn-primary btn-block" value="Login" />
         </form>
         @include ('layouts.errors')
+        <br/>
         <div class="text-center">
-          <!-- <a class="d-block small mt-3" href="register.html">Register an Account</a> -->
-          <a class="d-block small" href="forgot-password.html">No recuerdo mi password</a>
+          <a class="d-block small" href="{{ route('password.request') }}">No recuerdo mi password</a>
         </div>
       </div>
     </div>

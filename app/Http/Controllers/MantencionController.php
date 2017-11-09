@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mantencion;
 use Illuminate\Http\Request;
+use App\Mail\MantencionCaja;
+use App\Mail\MantencionOkiCaja;
 // use Carbon\Carbon;
 
 class MantencionController extends Controller
@@ -23,17 +25,11 @@ class MantencionController extends Controller
     public function index()
     {
         $mantenciones = Mantencion::all()->sortByDesc("created_at");
+        // dd($mantenciones);
         // $mantenciones = Mantencion::orderBy('created_at')->get();
 
-        /*foreach ($mantenciones as $mantencion) {
-            Carbon::setLocale('es');
-            $mantencion->created_at = new Carbon($mantencion->created_at->toFormattedDateString()); 
-        }*/   
-
-    
-        //$mantenciones
-        //$createdAt = Carbon::parse($item['created_at']);
-        return view('mantenciones.index', compact('mantenciones'));
+        //return view('mantenciones.index', compact('mantenciones'));
+        return view('mantenciones.index')->with('mantenciones',$mantenciones);
     }
 
     /**
@@ -60,6 +56,24 @@ class MantencionController extends Controller
         ]);
 
         $mantencion = Mantencion::create(request((['codigo', 'detalle'])));
+
+        
+        //Aquí se hacen las maniobras para enviar un email a la supervisora de cajas
+        //cada vez que se le realice una mantencion a un pc u okidata del sector cajas
+        $codigo = substr($mantencion->codigo, 0, 3);
+        
+        switch ($codigo) {
+        case "CMP":
+            if($mantencion->equipo->sector->nombre == "Cajas")
+                \Mail::to('strivino@sanchezysanchez.cl')->send(new MantencionCaja($mantencion));
+            break;
+        case "OKI":
+            if($mantencion->okidata->sector->nombre == "Cajas")
+                \Mail::to('strivino@sanchezysanchez.cl')->send(new MantencionOkiCaja($mantencion));
+            break;
+        } 
+
+
         return redirect('/mantenciones');
     }
 

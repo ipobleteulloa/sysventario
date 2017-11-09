@@ -43,5 +43,30 @@ class Mantencion extends Model
     }
 
 
+    public function nombre()
+    {
+
+
+        $codigo = $this->codigo;
+            $cod = substr($codigo, 0, 3);
+            switch ($cod) {
+            case "CMP":
+                return $this->equipo->nombre;
+                break;
+            case "IMP":
+                return $this->impresora->nombre;
+                break;
+            case "OKI":
+                return $this->okidata->nombre;
+                break;
+            case "ZEB":
+                return $this->zebra->nombre;
+                break;
+            }
+
+    }
+
+
 
 }
+

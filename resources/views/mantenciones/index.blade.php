@@ -35,11 +35,13 @@
 				<tr>
 					<!-- <td>{{ $mantencion->created_at->format('Y/m/d') }} -->
 					<td>{{ $mantencion->codigo }}</td>
-					<td>{{ $mantencion->equipo->nombre }}</td>
+
+					
+          <td>{{ $mantencion->nombre() }}</td>
 					<td>{{ $mantencion->detalle }}</td>
 					<!-- <td>{{ $mantencion->created_at->toDateString() }} -->
 					<!-- <td>{{ $mantencion->created_at->toFormattedDateString() }} -->
-					<td>{{ $mantencion->created_at->format('d/m/Y') }}
+					<td>{{ $mantencion->created_at->format('d/m/Y') }}</td>
 					<!-- <td>{{ $mantencion->created_at->formatLocalized('l jS \\of F Y') }} -->
 				</tr>
 				@endforeach		

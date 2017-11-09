@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/sysventario/'),
+    'url' => env('APP_URL', 'http://it.sanchez.local/sysventario/'),
 
     /*
     |--------------------------------------------------------------------------

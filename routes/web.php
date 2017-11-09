@@ -15,7 +15,6 @@ Route::get('/', 'MantencionController@index')->name('home');
 
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
-//Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete');
 Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 Route::resource('mantenciones', 'MantencionController');
 
@@ -60,7 +59,7 @@ Route::resource('okidatas', 'OkidataController');
 Route::get('/sistemaoperativo/{sistemaOperativo}/edit', 'SistemaOperativoController@edit');
 Route::patch('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@update');
 Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
-Route::resource('sistemaoperativo', 'SistemaOperativoController'); //No funciona bien debido a no seguir la norma de nombres (tablas)
+Route::resource('sistemaoperativo', 'SistemaOperativoController');
 
 
 //Sectores
@@ -70,9 +69,11 @@ Route::delete('/sectores/{sector}', 'SectorController@destroy');
 Route::resource('sectores','SectorController');
 
 
-Route::get('/register', 'RegistrationController@create');
+Route::get('/register', 'RegistrationController@create')->name('register');
 Route::post('/register', 'RegistrationController@store');
 
 Route::get ('/login', 'SessionController@create')->name('login');
 Route::post ('/login', 'SessionController@store');
 Route::get ('/logout', 'SessionController@destroy');
+
+Auth::routes();

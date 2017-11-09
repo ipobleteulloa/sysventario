@@ -109,7 +109,7 @@ class OkidataController extends Controller
                 'modelo' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id']));
+            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb']));
             $okidata->update($modificaciones);
         }
         return redirect('/okidatas');

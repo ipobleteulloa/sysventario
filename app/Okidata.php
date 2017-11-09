@@ -31,7 +31,7 @@ class Okidata extends Model
 		return static::where('codigo', $codigo )->first();
 	}
 
-	protected $fillable = ['codigo', 'nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'created_at', 'updated_at'];
+	protected $fillable = ['codigo', 'nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'created_at', 'updated_at'];
 
 	public function estado()
     {
@@ -43,4 +43,9 @@ class Okidata extends Model
         return $this->hasMany('App\Mantencion','codigo', 'codigo');
     }
     
+        public function sector()
+    {
+        return $this->belongsTo('App\Sector');
+    }
+
 }
