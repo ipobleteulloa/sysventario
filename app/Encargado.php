@@ -1,0 +1,13 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Encargado extends Model
+{
+    public function sectores()
+    {
+        return $this->belongsToMany('App\Sector');
+    }
+}

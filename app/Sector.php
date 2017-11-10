@@ -14,18 +14,23 @@ class Sector extends Model
         return $this->hasMany('App\Equipo');
     }
 
-    /*public function impresoras()
+    public function impresoras()
     {
         return $this->hasMany('App\Impresora');
-    }*/
+    }
 
     public function okidatas()
     {
         return $this->hasMany('App\Okidata');
     }
 
-    /*public function zebras()
+    public function zebras()
     {
         return $this->hasMany('App\Zebras');
-    }*/
+    }
+
+    public function encargados()
+    {
+        return $this->belongsToMany('App\Encargado');
+    }
 }
