@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Encargado;
+use App\Sector;
 use Illuminate\Http\Request;
 
 class EncargadoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class EncargadoController extends Controller
      */
     public function index()
     {
-        //
+        $sectores = Sector::all();
+        return view('encargados.index', compact('sectores'));
     }
 
     /**
@@ -24,7 +33,8 @@ class EncargadoController extends Controller
      */
     public function create()
     {
-        //
+        $sectores = Sector::all();
+        return view('encargados.create', compact('sectores'));
     }
 
     /**
@@ -35,7 +45,12 @@ class EncargadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->sector);
+        $encargado = Encargado::create(request((['nombre', 'email'])));
+        //$encargado = Encargado::create($request->all());
+        //$id = $encargado->id;
+        App\Encargado::find($encargado->id)->sectores()->attach($request->sector);
+
     }
 
     /**

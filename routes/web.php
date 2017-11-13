@@ -69,6 +69,10 @@ Route::delete('/sectores/{sector}', 'SectorController@destroy');
 Route::resource('sectores','SectorController');
 
 
+//Encargados
+Route::resource('encargados','EncargadoController');
+
+
 Route::get('/register', 'RegistrationController@create')->name('register');
 Route::post('/register', 'RegistrationController@store');
 
