@@ -17,7 +17,6 @@ class CreateEncargadosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('email');
-            $table->integer('sector_id');
             $table->timestamps();
         });
     }

@@ -47,6 +47,9 @@
             <li>
               <a href="{{ url('sectores/') }}">Sectores</a>
             </li>
+            <li>
+              <a href="{{ url('encargados/') }}">Encargados</a>
+            </li>
             <!-- <li>
               <a href="forgot-password.html">Forgot Password Page</a>
             </li>

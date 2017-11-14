@@ -12,4 +12,6 @@ class Encargado extends Model
     {
         return $this->belongsToMany('App\Sector');
     }
+
+ 
 }

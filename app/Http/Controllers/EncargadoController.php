@@ -22,8 +22,9 @@ class EncargadoController extends Controller
      */
     public function index()
     {
-        $sectores = Sector::all();
-        return view('encargados.index', compact('sectores'));
+        // $encargados = Encargado::all();
+        $encargados = Encargado::orderBy('nombre')->get();
+        return view('encargados.index', compact('encargados'));
     }
 
     /**
@@ -45,12 +46,11 @@ class EncargadoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->sector);
-        $encargado = Encargado::create(request((['nombre', 'email'])));
-        //$encargado = Encargado::create($request->all());
-        //$id = $encargado->id;
-        App\Encargado::find($encargado->id)->sectores()->attach($request->sector);
+        //dd($request->sector);
 
+        $encargado = Encargado::create(request((['nombre', 'email'])));
+        Encargado::find($encargado->id)->sectores()->attach($request->sector);
+        return redirect('/encargados');
     }
 
     /**
@@ -72,7 +72,8 @@ class EncargadoController extends Controller
      */
     public function edit(Encargado $encargado)
     {
-        //
+        $sectores = Sector::all();
+        return view('encargados.edit', compact('encargado', 'sectores'));
     }
 
     /**
@@ -84,7 +85,18 @@ class EncargadoController extends Controller
      */
     public function update(Request $request, Encargado $encargado)
     {
-        //
+        
+        $this->validate(request(), [
+
+            'nombre' => 'required',
+            'email' => 'required|email'
+        ]);
+
+        $modificaciones = request((['nombre', 'email']));
+        $encargado->update($modificaciones);
+        $encargado->sectores()->sync($request->sector);
+
+        return redirect('/encargados');
     }
 
     /**

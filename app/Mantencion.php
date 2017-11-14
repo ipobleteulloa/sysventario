@@ -42,13 +42,10 @@ class Mantencion extends Model
         return $this->belongsTo('App\Zebras', 'codigo', 'codigo');
     }
 
-
     public function nombre()
     {
-
-
         $codigo = $this->codigo;
-            $cod = substr($codigo, 0, 3);
+        $cod = substr($codigo, 0, 3);
             switch ($cod) {
             case "CMP":
                 return $this->equipo->nombre;
@@ -61,6 +58,26 @@ class Mantencion extends Model
                 break;
             case "ZEB":
                 return $this->zebra->nombre;
+                break;
+            }
+    }
+
+    public function tipo()
+    {
+        $codigo = $this->codigo;
+        $cod = substr($codigo, 0, 3);
+            switch ($cod) {
+            case "CMP":
+                return "Equipo";
+                break;
+            case "IMP":
+                return "Impresora";
+                break;
+            case "OKI":
+                return "Okidata";
+                break;
+            case "ZEB":
+                return "Zebra";
                 break;
             }
 

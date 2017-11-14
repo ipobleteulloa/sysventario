@@ -60,7 +60,7 @@ class MantencionController extends Controller
         
         //Aquí se hacen las maniobras para enviar un email a la supervisora de cajas
         //cada vez que se le realice una mantencion a un pc u okidata del sector cajas
-        $codigo = substr($mantencion->codigo, 0, 3);
+        /*$codigo = substr($mantencion->codigo, 0, 3);
         
         switch ($codigo) {
         case "CMP":
@@ -71,7 +71,9 @@ class MantencionController extends Controller
             if($mantencion->okidata->sector->nombre == "Cajas")
                 \Mail::to('strivino@sanchezysanchez.cl')->send(new MantencionOkiCaja($mantencion));
             break;
-        } 
+        } */
+
+        
 
 
         return redirect('/mantenciones');
