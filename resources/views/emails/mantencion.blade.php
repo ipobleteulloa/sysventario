@@ -9,13 +9,17 @@
 
 <body>
 
-	Se ha realizado una mantencion a {{ $mantencion-nombreEquipo() }}
+	Se ha realizado una mantención a: {{ $mantencion->nombreEquipo() }}.
+
+	<br/>
+
+	Código: {{ $mantencion->codigo }}
 
 	<br/>
 
 	Detalle: {{ $mantencion->detalle }}
 
-	<br/>
+	<br/><br/>
 
 	<a href="http://it.sanchez.local/sysventario/public/mantenciones">Ver listado</a>
 

@@ -37,7 +37,7 @@
 					<td>{{ $mantencion->codigo }}</td>
 
 					
-          <td>{{ $mantencion->nombre() }}</td>
+          <td>{{ $mantencion->nombreEquipo() }}</td>
 					<td>{{ $mantencion->detalle }}</td>
 					<!-- <td>{{ $mantencion->created_at->toDateString() }} -->
 					<!-- <td>{{ $mantencion->created_at->toFormattedDateString() }} -->
