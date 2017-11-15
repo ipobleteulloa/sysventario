@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Mantencion;
 //use App\Mail;
 use Illuminate\Http\Request;
-use App\Mail\MantencionCaja;
-use App\Mail\MantencionOkiCaja;
+//use App\Mail\MantencionCaja;
+//use App\Mail\MantencionOkiCaja;
+use App\Mail\MailMantencion;
 // use Carbon\Carbon;
 
 class MantencionController extends Controller
@@ -76,12 +77,13 @@ class MantencionController extends Controller
         $encargados = $mantencion->encargados();
 
         foreach ($encargados as $encargado) {
-            \Mail::to('ipobleteulloa@gmail.com')->send(new MantencionCaja($mantencion));
+            // \Mail::to('ipobleteulloa@gmail.com')->send(new MantencionCaja($mantencion));
             \Mail::to($encargado->email)->send(new MailMantencion($mantencion));
+            //echo $encargado->email;
         }
         
 
-
+        //die;
         return redirect('/mantenciones');
     }
 

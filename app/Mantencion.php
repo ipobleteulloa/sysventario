@@ -62,11 +62,6 @@ class Mantencion extends Model
             }
     }*/
 
-    public function nombreEquipo()
-    {
-        return $this->tipoObj()->nombre;
-    }
-
     public function tipoObj()
     {
         $codigo = $this->codigo;
@@ -88,6 +83,12 @@ class Mantencion extends Model
 
     }
 
+    public function nombreEquipo()
+    {
+        return $this->tipoObj()->nombre;
+    }
+
+    
     public function encargados()
     {
         return $this->tipoObj()->sector->encargados;
