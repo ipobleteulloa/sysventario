@@ -89,6 +89,23 @@
               </div>
             </div>
           </div>
+          
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="Estado">Sector</label>
+                <div class="funkyradio">
+                  @foreach ($sectores as $key => $sector)
+                    <div class="funkyradio-success  col-md-5">
+                      <input type="checkbox" name="sector[]" id="radio{{ $key+1 }}" value="{{ $sector->id }}" 
+                      {{ $encargado->sectores->contains('id', $sector->id) ? 'CHECKED' : '' }} />
+                      <label for="radio{{ $key+1 }}">{{ $sector->nombre }}</label>
+                    </div>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
           <br/>
           <input class="btn btn-primary btn-block" id="EquipoSubmit" type="submit" value="Editar Equipo">
 

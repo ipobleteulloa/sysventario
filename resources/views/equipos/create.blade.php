@@ -62,14 +62,48 @@
                 <label for="Estado">Estado  </label>
                 <div class="funkyradio">
                   <div class="funkyradio-success  col-md-5">
-                    <input type="radio" name="estado_id" id="radio1" value="1" CHECKED />
-                    <label for="radio1">Activo</label>
+                    <input type="radio" name="estado_id" id="radioe1" value="1" CHECKED />
+                    <label for="radioe1">Activo</label>
                   </div>
                   <div class="funkyradio-default col-md-5">
-                    <input type="radio" name="estado_id" id="radio3" value="4" />
-                    <label for="radio3">Contingencia</label>
+                    <input type="radio" name="estado_id" id="radioe3" value="4" />
+                    <label for="radioe3">Contingencia</label>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="Estado">Sector</label>
+
+
+                <select class="form-control m-bot15" name="role_id">
+                  @if ($sectores->count())
+                      <option value="" >Seleccione una opción</option>
+                      @foreach ($sectores as $key => $sector)
+                        <option value="{{ $sector->id }}" >{{ $sector->nombre }}</option>
+                      @endforeach
+                  @endif
+                </select>
+
+
+
+                
+                <!-- <div class="funkyradio">
+                  @foreach ($sectores as $key => $sector)
+                    <div class="funkyradio-success  col-md-5">
+                      <input type="checkbox" name="sector[]" id="radio{{ $key+1 }}" value="{{ $sector->id }}" />
+                      <label for="radio{{ $key+1 }}">{{ $sector->nombre }}</label>
+                    </div>
+                    @endforeach
+                </div> -->
+
+
+
+
               </div>
             </div>
           </div>

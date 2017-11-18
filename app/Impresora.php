@@ -43,4 +43,8 @@ class Impresora extends Model
         return $this->hasMany('App\Mantencion','codigo', 'codigo');
     }
     
+    public function sector()
+    {
+        return $this->belongsTo('App\Sector');
+    }
 }

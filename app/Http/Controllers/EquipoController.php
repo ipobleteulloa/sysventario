@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipo;
+use App\Sector;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
@@ -33,7 +34,8 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        return view('equipos.create');
+        $sectores = Sector::all();
+        return view('equipos.create', compact('sectores'));
     }
 
     /**
@@ -84,7 +86,9 @@ class EquipoController extends Controller
      */
     public function edit(Equipo $equipo)
     {
-        return view('equipos.edit', compact('equipo'));
+        $sectores = Sector::all();
+        $selectedSector = $equipo->sector_id;
+        return view('equipos.edit', compact('equipo', 'sectores'));
     }
 
     /**

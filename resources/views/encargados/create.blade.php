@@ -37,7 +37,6 @@
               </div>
             </div>
           </div>
-        </div>      
   		  <br/>
   		  <input class="btn btn-primary btn-block" id="EncargadoSubmit" type="submit" value="Agregar Encargado">
       @include ('layouts.errors')
