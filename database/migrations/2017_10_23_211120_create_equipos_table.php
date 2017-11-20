@@ -15,7 +15,7 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo');
+            $table->string('codigo')->nullable();
             $table->string('nombre');
             $table->string('procesador')->nullable();
             $table->string('ram')->nullable();

@@ -89,6 +89,20 @@
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="sector_id">Sector</label>
+                <select class="form-control m-bot15" name="sector_id">
+                  @if ($sectores->count())
+                    @foreach ($sectores as $sector)
+                    <option value="{{ $sector->id }}" {{ ($sector->id == $impresora->sector_id) ? 'SELECTED' : '' }} >{{ $sector->nombre }}</option>
+                    @endforeach
+                  @endif
+                </select>
+              </div>
+            </div>
+          </div>
           <br/>
           <input class="btn btn-primary btn-block" id="ImpresorasSubmit" type="submit" value="Editar Impresora">
               <!--<a class="btn btn-primary btn-block" href="login.html">Agregar Impresora</a>-->

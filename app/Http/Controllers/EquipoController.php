@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipo;
 use App\Sector;
+use App\SistemaOperativo;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
@@ -34,8 +35,9 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        $sectores = Sector::all();
-        return view('equipos.create', compact('sectores'));
+        $sectores = Sector::all()->sortBy('nombre');
+        $so = SistemaOperativo::all();
+        return view('equipos.create', compact('sectores', 'so'));
     }
 
     /**
@@ -48,7 +50,8 @@ class EquipoController extends Controller
     {
         $this->validate(request(), [
 
-            'nombre' => 'required'
+            'nombre' => 'required',
+            'sector_id' => 'required'
         ]);
 
         $equipo =Equipo::create(request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'])));
@@ -86,7 +89,7 @@ class EquipoController extends Controller
      */
     public function edit(Equipo $equipo)
     {
-        $sectores = Sector::all();
+        $sectores = Sector::all()->sortBy('nombre');
         $selectedSector = $equipo->sector_id;
         return view('equipos.edit', compact('equipo', 'sectores'));
     }
@@ -106,9 +109,8 @@ class EquipoController extends Controller
             $equipo->save();
         }
         else {
-
+            //dd($request);
             $this->validate(request(), [
-
                 'nombre' => 'required'
             ]);
         

@@ -49,6 +49,18 @@
           </div>
 
           <div class="form-group">
+            <label for="SistemaOperativo">Sistema Operativo</label>
+            <select class="form-control m-bot15" name="sistemaoperativo_id">
+              @if ($so->count())
+                  <option value="" >Seleccione una opción</option>
+                  @foreach ($so as $soperativo)
+                  <option value="{{ $soperativo->id }}" >{{ $soperativo->nombre }}</option>
+                  @endforeach
+              @endif
+            </select>
+          </div>
+
+          <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleConfirmPassword">Ubicaci&oacute;n 	</label>
@@ -77,14 +89,12 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="Estado">Sector</label>
-
-
-                <select class="form-control m-bot15" name="role_id">
+                <label for="Sector">Sector</label>
+                <select class="form-control m-bot15" name="sector_id">
                   @if ($sectores->count())
                       <option value="" >Seleccione una opción</option>
-                      @foreach ($sectores as $key => $sector)
-                        <option value="{{ $sector->id }}" >{{ $sector->nombre }}</option>
+                      @foreach ($sectores as $sector)
+                      <option value="{{ $sector->id }}" >{{ $sector->nombre }}</option>
                       @endforeach
                   @endif
                 </select>

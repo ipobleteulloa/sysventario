@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Impresora;
+use App\Sector;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
 
@@ -57,7 +58,8 @@ class ImpresorasController extends Controller
 
 	public function create()
 	{
-		return view('impresoras.create');
+		$sectores = Sector::all()->sortBy('nombre');
+		return view('impresoras.create', compact('sectores'));
 	}
 		
 	public function store()
@@ -75,10 +77,11 @@ class ImpresorasController extends Controller
 
 			'nombre' => 'required',
 			'marca' => 'required',
-			'modelo' => 'required'
+			'modelo' => 'required',
+			'sector_id' => 'required'
 		]);
 
-		$imp = Impresora::create(request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+		$imp = Impresora::create(request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id'])));
 		$lastimpid = $imp->id;
 		if (strlen($lastimpid) == 1) 
 			$codigo = "IMP00".$lastimpid;	
@@ -111,7 +114,8 @@ class ImpresorasController extends Controller
      */
     public function edit(Impresora $impresora) // edit(Impresora $impresora)
     {
-        return view('impresoras.edit',compact('impresora'));
+    	$sectores = Sector::all()->sortBy('nombre');
+        return view('impresoras.edit',compact('impresora', 'sectores'));
     }
 	
 
@@ -135,10 +139,11 @@ class ImpresorasController extends Controller
 
 				'nombre' => 'required',
 				'marca' => 'required',
-				'modelo' => 'required'
+				'modelo' => 'required',
+				'sector_id' => 'required'
 			]);
 		
-			$modificaciones = request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id']));
+			$modificaciones = request((['nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id']));
 			$impresora->update($modificaciones);
 		}
     	return redirect('/impresoras');

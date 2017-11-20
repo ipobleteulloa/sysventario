@@ -31,7 +31,7 @@ class Impresora extends Model
 		return static::where('codigo', $codigo )->first();
 	}
 
-	protected $fillable = ['codigo', 'nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'estado_id', 'created_at', 'updated_at', 'tipo_conexion'];
+	protected $fillable = ['codigo', 'nombre', 'marca', 'modelo', 'insumos', 'ubicacion', 'estado_id', 'created_at', 'updated_at', 'tipo_conexion','sector_id'];
 
 	public function estado()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Okidata;
+use App\Sector;
 use Illuminate\Http\Request;
 
 class OkidataController extends Controller
@@ -21,8 +22,7 @@ class OkidataController extends Controller
     public function index()
     {
         $okidatas = Okidata::all();
-        $location = "index";
-        return view("okidatas.index", compact('okidatas', 'location'));
+        return view("okidatas.index", compact('okidatas'));
     }
 
     /**
@@ -32,7 +32,8 @@ class OkidataController extends Controller
      */
     public function create()
     {
-        return view('okidatas.create');
+        $sectores = Sector::all()->sortBy('nombre');
+        return view('okidatas.create', compact('sectores'));
     }
 
     /**
@@ -46,10 +47,11 @@ class OkidataController extends Controller
         $this->validate(request(), [
 
             'nombre' => 'required',
-            'modelo' => 'required'
+            'modelo' => 'required',
+            'sector_id' => 'required'
         ]);
 
-        $oki = Okidata::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+        $oki = Okidata::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id'])));
         $lastokiid = $oki->id;
         if (strlen($lastokiid) == 1) 
             $codigo = "OKI00".$lastokiid;
@@ -84,7 +86,8 @@ class OkidataController extends Controller
      */
     public function edit(Okidata $okidata)
     {
-        return view('okidatas.edit', compact('okidata'));
+        $sectores = Sector::all()->sortBy('nombre');
+        return view('okidatas.edit', compact('okidata', 'sectores'));
     }
 
     /**
@@ -106,10 +109,11 @@ class OkidataController extends Controller
             $this->validate(request(), [
 
                 'nombre' => 'required',
-                'modelo' => 'required'
+                'modelo' => 'required',
+                'sector_id' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb']));
+            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'sector_id']));
             $okidata->update($modificaciones);
         }
         return redirect('/okidatas');

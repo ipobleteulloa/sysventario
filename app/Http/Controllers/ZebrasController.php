@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Zebras;
+use App\Sector;
 use Illuminate\Http\Request;
 
 class ZebrasController extends Controller
@@ -32,7 +33,8 @@ class ZebrasController extends Controller
      */
     public function create()
     {
-        return view('zebras.create');
+        $sectores = Sector::all()->sortBy('nombre');
+        return view('zebras.create', compact('sectores'));
     }
 
     /**
@@ -46,10 +48,11 @@ class ZebrasController extends Controller
         $this->validate(request(), [
 
             'nombre' => 'required',
-            'modelo' => 'required'
+            'modelo' => 'required',
+            'sector_id' => 'required'
         ]);
 
-        $zeb = Zebras::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id'])));
+        $zeb = Zebras::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id', 'sector_id'])));
         $lastzebid = $zeb->id;
         if (strlen($lastzebid) == 1) 
             $codigo = "ZEB00".$lastzebid;
@@ -84,7 +87,8 @@ class ZebrasController extends Controller
      */
     public function edit(Zebras $zebra)
     {
-        return view('zebras.edit',compact('zebra'));
+        $sectores = Sector::all()->sortBy('nombre');
+        return view('zebras.edit',compact('zebra', 'sectores'));
     }
 
     /**
@@ -106,10 +110,11 @@ class ZebrasController extends Controller
             $this->validate(request(), [
 
                 'nombre' => 'required',
-                'modelo' => 'required'
+                'modelo' => 'required',
+                'sector_id' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id']));
+            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id']));
             $zebra->update($modificaciones);
         }
         return redirect('/zebras');
