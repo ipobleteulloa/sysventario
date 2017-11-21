@@ -90,8 +90,8 @@ class EquipoController extends Controller
     public function edit(Equipo $equipo)
     {
         $sectores = Sector::all()->sortBy('nombre');
-        $selectedSector = $equipo->sector_id;
-        return view('equipos.edit', compact('equipo', 'sectores'));
+        $soperativos = SistemaOperativo::all()->sortBy('nombre');
+        return view('equipos.edit', compact('equipo', 'sectores', 'soperativos'));
     }
 
     /**

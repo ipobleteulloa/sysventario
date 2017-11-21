@@ -103,6 +103,19 @@
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="soperativo">Sistema Operativo</label>
+                <select class="form-control m-bot15" name="soperativo">
+                  @if ($soperativos->count())
+                    @foreach ($soperativos as $so)
+                    <option value="{{ $so->id }}" {{ ($so->id == $equipo->sistemaoperativo_id) ? 'SELECTED' : '' }} >{{ $so->nombre }}</option>
+                    @endforeach
+                  @endif
+                </select>
+              </div>
+            </div>
           <!-- <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
