@@ -59,11 +59,25 @@
               @endif
             </select>
           </div>
-
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Ubicaci&oacute;n 	</label>
+                <label for="Sector">Sector</label>
+                <select class="form-control m-bot15" name="sector_id">
+                  @if ($sectores->count())
+                    <option value="" >Seleccione una opción</option>
+                    @foreach ($sectores as $sector)
+                      <option value="{{ $sector->id }}" >{{ $sector->nombre }}</option>
+                    @endforeach
+                  @endif
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="ConfirmPassword">Ubicaci&oacute;n 	</label>
                 <input class="form-control" id="InputUbicacion" name="ubicacion" type="text" placeholder="Ingrese la ubicaci&oacute;n donde se usar&aacute;">
               </div>
             </div>
@@ -85,39 +99,7 @@
               </div>
             </div>
           </div>
-
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-12">
-                <label for="Sector">Sector</label>
-                <select class="form-control m-bot15" name="sector_id">
-                  @if ($sectores->count())
-                      <option value="" >Seleccione una opción</option>
-                      @foreach ($sectores as $sector)
-                      <option value="{{ $sector->id }}" >{{ $sector->nombre }}</option>
-                      @endforeach
-                  @endif
-                </select>
-
-
-
-                
-                <!-- <div class="funkyradio">
-                  @foreach ($sectores as $key => $sector)
-                    <div class="funkyradio-success  col-md-5">
-                      <input type="checkbox" name="sector[]" id="radio{{ $key+1 }}" value="{{ $sector->id }}" />
-                      <label for="radio{{ $key+1 }}">{{ $sector->nombre }}</label>
-                    </div>
-                    @endforeach
-                </div> -->
-
-
-
-
-              </div>
-            </div>
-          </div>
-    		  <br/>
+    		  
     		  <input class="btn btn-primary btn-block" id="EquipoSubmit" type="submit" value="Agregar Equipo">
         @include ('layouts.errors')
         </form>
