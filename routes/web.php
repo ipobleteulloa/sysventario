@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MantencionController@index')->name('home');
+Route::get('/home', 'MantencionController@index')->name('home');
 
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
@@ -68,6 +69,8 @@ Route::patch('/sectores/{sector}', 'SectorController@update');
 Route::delete('/sectores/{sector}', 'SectorController@destroy');
 Route::resource('sectores','SectorController');
 
+//Notebooks
+Route::resource('notebooks','NotebookController');
 
 //Encargados
 Route::resource('encargados','EncargadoController');

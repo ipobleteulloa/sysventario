@@ -38,7 +38,7 @@
     <script src="{{ URL::asset('js/sb-admin-datatables.min.js') }}"></script>
     <!-- Easy Autocomplete JS -->
     <script src="{{ URL::asset('vendor/easy-autocomplete/jquery.easy-autocomplete.min.js') }}"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--<script src="{{ URL::asset('vendor/jquery-ui/jquery-ui.js') }}"></script>-->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
