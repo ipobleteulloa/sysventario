@@ -61,6 +61,7 @@
               <div class="col-md-12">
                 <label for="soperativo">Sistema Operativo</label>
                 <select class="form-control m-bot15" name="soperativo">
+                  <option disabled selected value> -- Seleccione un SO -- </option>
                   @if ($soperativos->count())
                     @foreach ($soperativos as $so)
                     <option value="{{ $so->id }}" {{ ($so->id == $equipo->sistemaoperativo_id) ? 'SELECTED' : '' }} >{{ $so->nombre }}</option>
