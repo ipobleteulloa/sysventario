@@ -60,9 +60,9 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="soperativo">Sistema Operativo</label>
-                <select class="form-control m-bot15" name="soperativo">
-                  <option disabled selected value> -- Seleccione un SO -- </option>
+                <select class="form-control m-bot15" name="sistemaoperativo_id">
                   @if ($soperativos->count())
+                    <option selected disabled> -- Seleccione un SO -- </option>
                     @foreach ($soperativos as $so)
                     <option value="{{ $so->id }}" {{ ($so->id == $equipo->sistemaoperativo_id) ? 'SELECTED' : '' }} >{{ $so->nombre }}</option>
                     @endforeach
@@ -88,7 +88,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Ubicaci&oacute;n  </label>
+                <label for="Ubicacion">Ubicaci&oacute;n  </label>
                 <input class="form-control" id="InputUbicacion" name="ubicacion" type="text" value="{{ $equipo->ubicacion }}" >
               </div>
             </div>

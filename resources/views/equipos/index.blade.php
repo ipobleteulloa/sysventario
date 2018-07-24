@@ -14,7 +14,9 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fa fa-table"></i> Listado de Equipos
+      @if (Auth::check())
       <a href="{{ url('equipos/create') }}" class="btn btn-primary f_right">Agregar Equipo</a>
+      @endif
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -45,8 +47,21 @@
 			@foreach ($equipos as $equipo)
 			<tr>
 				<td>{{ $equipo->codigo }}</td>
-				<td>{{ $equipo->nombre }}</td>
-				<!-- <td>{{ $equipo->ubicacion }}</td> -->
+        <!-- <td><a href="{{ url('equipos/'. $equipo->id) }}">{{ $equipo->nombre }}</a></td> -->
+        <td>
+          <!-- <a href="{{ url('equipos/'. $equipo->id) }}" onclick="return hs.htmlExpand(this, { objectType: 'iframe', objectWidth: '900' } )">
+            {{ $equipo->nombre }}
+          </a> -->
+          <a href="{{ url('equipos/'. $equipo->id) }}">
+            {{ $equipo->nombre }}
+          </a>
+        </td>
+
+
+
+
+
+				
 				<td>{{ $equipo->sector->nombre }}</td>
 				@if (Auth::check())
         <td>

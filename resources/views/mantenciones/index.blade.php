@@ -31,20 +31,20 @@
                 </tr>
               </tfoot>
               <tbody>
-				@foreach ($mantenciones as $mantencion)
-				<tr>
-					<!-- <td>{{ $mantencion->created_at->format('Y/m/d') }} -->
-					<td>{{ $mantencion->codigo }}</td>
+        				@foreach ($mantenciones as $mantencion)
+        				<tr>
+        					<!-- <td>{{ $mantencion->created_at->format('Y/m/d') }} -->
+        					<td>{{ $mantencion->codigo }}</td>
 
-					
-          <td>{{ $mantencion->nombreEquipo() }}</td>
-					<td>{{ $mantencion->detalle }}</td>
-					<!-- <td>{{ $mantencion->created_at->toDateString() }} -->
-					<!-- <td>{{ $mantencion->created_at->toFormattedDateString() }} -->
-					<td>{{ $mantencion->created_at->format('d/m/Y') }}</td>
-					<!-- <td>{{ $mantencion->created_at->formatLocalized('l jS \\of F Y') }} -->
-				</tr>
-				@endforeach		
+        					
+                  <td>{{ $mantencion->nombreEquipo() }}</td>
+        					<td>{{ $mantencion->detalle }}</td>
+        					<!-- <td>{{ $mantencion->created_at->toDateString() }} -->
+        					<!-- <td>{{ $mantencion->created_at->toFormattedDateString() }} -->
+        					<td>{{ $mantencion->created_at->format('d/m/Y') }}</td>
+        					<!-- <td>{{ $mantencion->created_at->formatLocalized('l jS \\of F Y') }} -->
+        				</tr>
+        				@endforeach		
               </tbody>
             </table>
           </div>

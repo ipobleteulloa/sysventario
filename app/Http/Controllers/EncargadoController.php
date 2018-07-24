@@ -107,6 +107,7 @@ class EncargadoController extends Controller
      */
     public function destroy(Encargado $encargado)
     {
-        //
+        $encargado->delete();
+        return redirect('/encargados');
     }
 }

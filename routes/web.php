@@ -26,6 +26,7 @@ Route::get('/equipos/debaja', 'EquipoController@debaja');
 Route::get('/equipos/enrevision', 'EquipoController@enrevision');
 Route::get('/equipos/contingencia', 'EquipoController@contingencia');
 Route::get('equipos/{equipo}/mantencion', 'EquipoController@mantencion');
+//Route::get('equipos/{equipo}/show', 'EquipoController@show');
 Route::resource('equipos', 'EquipoController');
 
 
@@ -74,6 +75,9 @@ Route::resource('notebooks','NotebookController');
 
 //Encargados
 Route::resource('encargados','EncargadoController');
+
+//Revisoin
+Route::resource('revisions','RevisionController');
 
 
 Route::get('/register', 'RegistrationController@create')->name('register');

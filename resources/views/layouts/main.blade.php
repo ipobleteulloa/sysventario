@@ -21,6 +21,11 @@
   <!-- Easy Autocomplete -->
   <link href="{{ URL::asset('vendor/easy-autocomplete/easy-autocomplete.min.css') }}" rel="stylesheet">
   <link href="{{ URL::asset('vendor/easy-autocomplete/easy-autocomplete.themes.min.css') }}" rel="stylesheet">
+  <!-- HIGHSLIDE -->
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('vendor/highslide/highslide.css') }}" />
+  
+
+
 
 
   <!-- Bootstrap core JavaScript-->
@@ -39,6 +44,17 @@
     <!-- Easy Autocomplete JS -->
     <script src="{{ URL::asset('vendor/easy-autocomplete/jquery.easy-autocomplete.min.js') }}"></script>
     <!--<script src="{{ URL::asset('vendor/jquery-ui/jquery-ui.js') }}"></script>-->
+    <!-- HIGHSLIDE -->
+    <script src="{{ URL::asset('vendor/highslide/highslide-with-html.js') }}"></script>
+    <!--
+    2) Optionally override the settings defined at the top
+    of the highslide.js file. The parameter hs.graphicsDir is important!
+    -->
+    <script type="text/javascript">
+      hs.graphicsDir = '{{ URL::asset("vendor/highslide/graphics/") }}/';
+      hs.outlineType = 'rounded-white';
+      hs.wrapperClassName = 'draggable-header';
+    </script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
