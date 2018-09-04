@@ -71,7 +71,12 @@
               <td>Placa madre</td><td> {{ $equipo->placa_madre }} </td>
             </tr>
             <tr>
-              <td>Sistema operativo</td><td> {{ $equipo->codigo }} </td>
+              <td>Sistema operativo</td>
+              @if($equipo->sistema_operativo === null)
+                <td></td>
+              @else
+              <td> {{ $equipo->sistema_operativo->nombre }} </td>
+              @endif
             </tr>
             <tr>
               <td>Sector</td><td> {{ $equipo->sector->nombre }} </td>

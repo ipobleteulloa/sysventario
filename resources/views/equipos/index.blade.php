@@ -35,7 +35,7 @@
           <tfoot>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
+			        <th>Nombre</th>
               <!-- <th>Ubicación</th> -->
               <th>Sector</th>
               @if (Auth::check())
