@@ -2,7 +2,7 @@
 
 @section ('content')
 	
-	<div class="card card-register mx-auto mt-5">
+	<div class="card card-register mx-auto">
       <div class="card-header">Agregar una impresora</div>
       <div class="card-body">
         <form method="POST" action="{{ URL::asset('/impresoras') }}">

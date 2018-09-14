@@ -36,7 +36,6 @@
             <tr>
               <th>Codigo</th>
 			        <th>Nombre</th>
-              <!-- <th>Ubicación</th> -->
               <th>Sector</th>
               @if (Auth::check())
               <th>Acciones</th>
@@ -47,43 +46,33 @@
 			@foreach ($equipos as $equipo)
 			<tr>
 				<td>{{ $equipo->codigo }}</td>
-        <!-- <td><a href="{{ url('equipos/'. $equipo->id) }}">{{ $equipo->nombre }}</a></td> -->
         <td>
-          <!-- <a href="{{ url('equipos/'. $equipo->id) }}" onclick="return hs.htmlExpand(this, { objectType: 'iframe', objectWidth: '900' } )">
-            {{ $equipo->nombre }}
-          </a> -->
           <a href="{{ url('equipos/'. $equipo->id) }}">
             {{ $equipo->nombre }}
           </a>
         </td>
-
-
-
-
-
-				
 				<td>{{ $equipo->sector->nombre }}</td>
 				@if (Auth::check())
         <td>
-					<div class="text-center">
+					<div> <!-- class="text-center" -->
 						<div class="acciones">
-			                <a href="{{ url('equipos/'. $equipo->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
-			            </div>
+              <a href="{{ url('equipos/'. $equipo->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
+            </div>
 						&nbsp;
-			            <div class="acciones">
-			                <a href="{{ url('equipos/'. $equipo->id .'/mantencion') }}" class="btn btn-success btn-sm">Mantenci&oacute;n</a>
-			            </div>
-			            @if( $equipo->estado_id != "2")
+            <div class="acciones">
+              <a href="{{ url('equipos/'. $equipo->id .'/mantencion') }}" class="btn btn-success btn-sm">Mantenci&oacute;n</a>
+            </div>
+            @if( $equipo->estado_id != "2")
 						&nbsp;
 							<div class="acciones">
 								<form action="{{ url('equipos/'. $equipo->id) }}" method="POST" onsubmit="return confirm('¿Desea dar de baja este equipo?')">
-				                    {{ method_field('patch') }}
-				                    {{ csrf_field() }}
-				                    <input type="hidden" name="dardebaja" value="dardebaja" />
-				                    <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
-				                </form>
-				            </div>
-				        @endif
+                    {{ method_field('patch') }}
+                    {{ csrf_field() }}
+                    <input type="hidden" name="dardebaja" value="dardebaja" />
+                    <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
+                </form>
+	            </div>
+		        @endif
 					</div>
 				</td>
         @endif

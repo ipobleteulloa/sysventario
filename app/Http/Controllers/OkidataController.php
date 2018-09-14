@@ -75,7 +75,7 @@ class OkidataController extends Controller
      */
     public function show(Okidata $okidata)
     {
-        //
+        return view('okidatas.show', compact('okidata'));
     }
 
     /**

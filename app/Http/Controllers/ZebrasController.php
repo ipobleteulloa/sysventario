@@ -74,9 +74,10 @@ class ZebrasController extends Controller
      * @param  \App\Zebras  $zebras
      * @return \Illuminate\Http\Response
      */
-    public function show(Zebras $zebras)
+    public function show(Zebras $zebra)
     {
-        //
+        // dd($zebra);
+        return view('zebras.show', compact('zebra'));
     }
 
     /**

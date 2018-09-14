@@ -48,7 +48,7 @@
 			@foreach ($impresoras as $impresora)
 			<tr>
 				<td>{{ $impresora->codigo }}</td>
-				<td>{{ $impresora->nombre }}</td>
+				<td><a href="{{ url('impresoras/'. $impresora->id) }}"> {{ $impresora->nombre }} </a></td>
 				<td>{{ $impresora->marca }}</td>
 				<td>{{ $impresora->modelo }}</td>
 				<td>{{ $impresora->insumos }}</td>
@@ -56,23 +56,23 @@
         <td>
 					<div>  <!-- class="text-center" -->
 						<div class="acciones">
-			                <a href="{{ url('impresoras/'. $impresora->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
-			            </div>
+              <a href="{{ url('impresoras/'. $impresora->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
+            </div>
 						&nbsp;
-			            <div class="acciones">
-			                <a href="{{ url('impresoras/'. $impresora->id .'/mantencion') }}" class="btn btn-success btn-sm">Mantenci&oacute;n</a>
-			            </div>
-			            @if( $impresora->estado_id != "2")
+            <div class="acciones">
+              <a href="{{ url('impresoras/'. $impresora->id .'/mantencion') }}" class="btn btn-success btn-sm">Mantenci&oacute;n</a>
+            </div>
+            @if( $impresora->estado_id != "2")
 						&nbsp;
 							<div class="acciones">
 								<form action="{{ url('impresoras/'. $impresora->id) }}" method="POST" onsubmit="return confirm('¿Desea dar de baja esta impresora?')">
-				                    {{ method_field('patch') }}
-				                    {{ csrf_field() }}
-				                    <input type="hidden" name="dardebaja" value="dardebaja" />
-				                    <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
-				                </form>
-				            </div>
-				        @endif
+                    {{ method_field('patch') }}
+                    {{ csrf_field() }}
+                    <input type="hidden" name="dardebaja" value="dardebaja" />
+                    <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
+                </form>
+	            </div>
+		        @endif
 					</div>
 				</td>
         @endif

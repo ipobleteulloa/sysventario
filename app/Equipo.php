@@ -35,14 +35,14 @@ class Equipo extends Model
 
 	public function estado()
     {
-    	//foreign key -> estado_id
         return $this->belongsTo('App\Estado');
     }
 
-    public function sistema_operativo()
+    public function mantenciones()
     {
-        return $this->belongsTo('App\SistemaOperativo','sistemaoperativo_id');
+        return $this->hasMany('App\Mantencion','codigo', 'codigo');
     }
+    
 
     public function sector()
     {
@@ -54,9 +54,9 @@ class Equipo extends Model
         return $this->hasMany('App\Red','codigo', 'codigo');
     }
 
-    public function mantenciones()
+    public function sistema_operativo()
     {
-        return $this->hasMany('App\Mantencion','codigo', 'codigo');
+        return $this->belongsTo('App\SistemaOperativo','sistemaoperativo_id');
     }
 
 }

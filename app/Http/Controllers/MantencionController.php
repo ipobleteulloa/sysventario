@@ -60,35 +60,12 @@ class MantencionController extends Controller
         $mantencion = Mantencion::create(request((['codigo', 'detalle'])));
 
         
-        //Aquí se hacen las maniobras para enviar un email a la supervisora de cajas
-        //cada vez que se le realice una mantencion a un pc u okidata del sector cajas
-        /*$codigo = substr($mantencion->codigo, 0, 3);
-        
-        switch ($codigo) {
-        case "CMP":
-            if($mantencion->equipo->sector->nombre == "Cajas")
-                \Mail::to('strivino@sanchezysanchez.cl')->send(new MantencionCaja($mantencion));
-            break;
-        case "OKI":
-            if($mantencion->okidata->sector->nombre == "Cajas")
-                \Mail::to('strivino@sanchezysanchez.cl')->send(new MantencionOkiCaja($mantencion));
-            break;
-        } */
-        //dd($mantencion->encargados);
-            //echo count($mantencion->encargados());
-            //die;
+        //Aquí se hacen las maniobras para enviar un email al encargado del sector
+        //cada vez que se le realice una mantencion a un activo 
             $encargados = $mantencion->encargados();
-            
             foreach ($encargados as $encargado) {
-                // \Mail::to('ipobleteulloa@gmail.com')->send(new MantencionCaja($mantencion));
                 \Mail::to($encargado->email)->send(new MailMantencion($mantencion));
-                //echo $encargado->email;
             }
-        
-        
-        
-
-        //die;
         return redirect('/mantenciones');
     }
 
@@ -141,4 +118,18 @@ class MantencionController extends Controller
     {
         return view('mantenciones.buscar');
     }
+
+    /**
+     * Muestra el listado de mantenciones de un activo.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function mantenciones($codigo)
+    {
+        $mantenciones = Mantencion::where('codigo',$codigo)->orderByDesc('created_at')->get();
+        return view('mantenciones.listado')->with('mantenciones',$mantenciones);
+    }
+
+
+
 }

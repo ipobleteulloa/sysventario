@@ -23,13 +23,13 @@ class ImpresorasController extends Controller
 		return view('impresoras.index',compact('impresoras','location'));
 	}
 	
-	public function show(Impresora $codigo)
+	public function show(Impresora $impresora)
 	{
 		//$impresora = DB::table('impresoras')->where('codigo', $codigo )->first();
 		
-		return $codigo;
+		//return $impresora;
 		//$impresora = Impresora::mostrar($codigo);
-		//return view('impresoras.show',compact('impresora'));
+		return view('impresoras.show',compact('impresora'));
 	}
 	
 	public function activas()

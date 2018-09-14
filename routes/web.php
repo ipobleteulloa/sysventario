@@ -11,12 +11,21 @@
 |
 */
 
-Route::get('/', 'MantencionController@index')->name('home');
-Route::get('/home', 'MantencionController@index')->name('home');
+// Route::get('/', 'MantencionController@index')->name('home');
+// Route::get('/home', 'MantencionController@index')->name('home');
+Route::get('/', 'EquipoController@activos')->name('home');
+Route::get('/home', 'EquipoController@activos')->name('home');
 
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
 Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
+
+
+Route::get('equipos/{codigo}/mantenciones', 'MantencionController@mantenciones');
+Route::get('impresoras/{impresora}/mantenciones', 'MantencionController@mantenciones');
+Route::get('okidatas/{okidata}/mantenciones', 'MantencionController@mantenciones');
+Route::get('zebras/{zebra}/mantenciones', 'MantencionController@mantenciones');
+//Route::resource('equipos.mantenciones', 'MantencionController');
 Route::resource('mantenciones', 'MantencionController');
 
 
@@ -26,7 +35,6 @@ Route::get('/equipos/debaja', 'EquipoController@debaja');
 Route::get('/equipos/enrevision', 'EquipoController@enrevision');
 Route::get('/equipos/contingencia', 'EquipoController@contingencia');
 Route::get('equipos/{equipo}/mantencion', 'EquipoController@mantencion');
-//Route::get('equipos/{equipo}/show', 'EquipoController@show');
 Route::resource('equipos', 'EquipoController');
 
 
@@ -39,15 +47,6 @@ Route::get('impresoras/{impresora}/mantencion', 'ImpresorasController@mantencion
 Route::resource('impresoras', 'ImpresorasController');
 
 
-//Zebras
-Route::get('/zebras/debaja', 'ZebrasController@debaja');
-Route::get('/zebras/activas', 'ZebrasController@activas');
-Route::get('/zebras/enrevision', 'ZebrasController@enrevision');
-Route::get('/zebras/contingencia', 'ZebrasController@contingencia');
-Route::get('zebras/{zebra}/mantencion', 'ZebrasController@mantencion');
-Route::resource('zebras', 'ZebrasController');
-
-
 //Okidatas
 Route::get('/okidatas/debaja', 'OkidataController@debaja');
 Route::get('/okidatas/activas', 'OkidataController@activas');
@@ -55,6 +54,15 @@ Route::get('/okidatas/enrevision', 'OkidataController@enrevision');
 Route::get('/okidatas/contingencia', 'OkidataController@contingencia');
 Route::get('okidatas/{okidata}/mantencion', 'OkidataController@mantencion');
 Route::resource('okidatas', 'OkidataController');
+
+
+//Zebras
+Route::get('/zebras/debaja', 'ZebrasController@debaja');
+Route::get('/zebras/activas', 'ZebrasController@activas');
+Route::get('/zebras/enrevision', 'ZebrasController@enrevision');
+Route::get('/zebras/contingencia', 'ZebrasController@contingencia');
+Route::get('zebras/{zebra}/mantencion', 'ZebrasController@mantencion');
+Route::resource('zebras', 'ZebrasController');
 
 
 //Sistema Operativo
@@ -76,7 +84,7 @@ Route::resource('notebooks','NotebookController');
 //Encargados
 Route::resource('encargados','EncargadoController');
 
-//Revisoin
+//Revision
 Route::resource('revisions','RevisionController');
 
 
