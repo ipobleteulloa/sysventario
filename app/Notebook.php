@@ -6,7 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notebook extends Model
 {
-    protected $fillable = ['usuario', 'marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'nserie2', 'entrega_id', 'estado_id', 'sistemaoperativo_id'];
+    protected $fillable = ['codigo', 'marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'estado_id', 'sistemaoperativo_id', 'mod_bateria', 'mod_cargador', 'observaciones'];
+
+    public static function activos()
+    {
+        return static::where('estado_id', 1)->get();
+    }
+    
+    public static function debaja()
+    {
+        return static::where('estado_id', 2)->get();
+    }
+
+    public static function enrevision()
+    {
+        return static::where('estado_id', 3)->get();
+    }
+    
+    public static function contingencia()
+    {
+        return static::where('estado_id', 4)->get();
+    }
 
     public function sistema_operativo()
     {

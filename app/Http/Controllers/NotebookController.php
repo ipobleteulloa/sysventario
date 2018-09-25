@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Notebook;
+//use App\Sector;
 use App\SistemaOperativo;
 use Illuminate\Http\Request;
 
 class NotebookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy', 'mantencion']]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +23,8 @@ class NotebookController extends Controller
     public function index()
     {
         $notebooks = Notebook::all();
-        return view('notebooks.index',compact($notebooks));
+        return view('notebooks.index',compact('notebooks'));
+        
     }
 
     /**
@@ -26,8 +34,9 @@ class NotebookController extends Controller
      */
     public function create()
     {
-        $sisops = SistemaOperativo::all();
-        return view('notebooks.create', compact($sisops));
+        //$sectores = Sector::all()->sortBy('nombre');
+        $so = SistemaOperativo::all()->sortBy('nombre');
+        return view('notebooks.create', compact('so'));
     }
 
     /**
@@ -38,6 +47,7 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
 
         $this->validate(request(), [
 
@@ -47,12 +57,13 @@ class NotebookController extends Controller
             'procesador' => 'required',
             'ram' => 'required',
             'hdd' => 'required',
-            'nserie' => 'required'
+            'nserie' => 'required',
+            'mod_cargador' => 'required'
         ]);
 
         $notebook = Notebook::create($request->all());
 
-        //$equipo =Equipo::create(request((['marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'])));
+        //$notebook = Notebook::create(request((['marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'])));
         $lastnbkid = $notebook->id;
         if (strlen($lastnbkid) == 1) 
             $codigo = "NBK00".$lastnbkid;
@@ -66,7 +77,6 @@ class NotebookController extends Controller
         $nbk->save();
 
         return redirect('/notebooks');
-        
     }
 
     /**
@@ -77,7 +87,7 @@ class NotebookController extends Controller
      */
     public function show(Notebook $notebook)
     {
-        //
+        return view('notebooks.show',compact('notebook'));
     }
 
     /**
@@ -88,7 +98,9 @@ class NotebookController extends Controller
      */
     public function edit(Notebook $notebook)
     {
-        //
+        $sectores = Sector::all()->sortBy('nombre');
+        $soperativos = SistemaOperativo::all()->sortBy('nombre');
+        return view('notebooks.edit', compact('notebook', 'sectores', 'soperativos'));
     }
 
     /**
@@ -100,7 +112,20 @@ class NotebookController extends Controller
      */
     public function update(Request $request, Notebook $notebook)
     {
-        //
+        //Validaciones para el boton "Dar de baja"
+        if($notebook['estado_id']!='2' && $request['dardebaja'] == 'dardebaja'){
+            $notebook->estado_id = '2';
+            $notebook->save();
+        }
+        else {
+            $this->validate(request(), [
+                'nombre' => 'required'
+            ]);
+        
+            $modificaciones = request((['marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'mod_bateria', 'mod_cargador', 'observaciones', 'estado_id', 'sistemaoperativo_id']));
+            $notebook->update($modificaciones);
+        }
+        return redirect('/notebooks');
     }
 
     /**
@@ -112,5 +137,34 @@ class NotebookController extends Controller
     public function destroy(Notebook $notebook)
     {
         //
+    }
+
+    public function activos()
+    {
+        $notebooks = Notebook::activos();
+        return view('notebooks.index',compact('notebooks'));
+    }
+    
+    public function debaja()
+    {
+        $notebooks = Notebook::debaja();
+        return view('notebooks.index',compact('notebooks'));
+    }
+
+    public function enrevision()
+    {
+        $notebooks = Notebook::enrevision();
+        return view('notebooks.index',compact('notebooks'));
+    }
+    
+    public function contingencia()
+    {
+        $notebooks = Notebook::contingencia();
+        return view('notebooks.index',compact('notebooks'));
+    }
+
+    public function mantencion(Notebook $notebook)
+    {
+        return view('mantenciones.create', compact('notebook'));
     }
 }
