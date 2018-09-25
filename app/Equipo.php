@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipo extends Model
 {
+    protected $fillable = ['codigo', 'nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'];
+
     public static function activos()
 	{
 		return static::where('estado_id', 1)->get();
@@ -26,12 +28,10 @@ class Equipo extends Model
         return static::where('estado_id', 4)->get();
     }
 	
-	public static function mostrar($codigo)
-	{
-		return static::where('codigo', $codigo )->first();
-	}
-
-	protected $fillable = ['codigo', 'nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'];
+	// public static function mostrar($codigo)
+	// {
+	// 	return static::where('codigo', $codigo )->first();
+	// }
 
 	public function estado()
     {
@@ -43,7 +43,6 @@ class Equipo extends Model
         return $this->hasMany('App\Mantencion','codigo', 'codigo');
     }
     
-
     public function sector()
     {
         return $this->belongsTo('App\Sector');

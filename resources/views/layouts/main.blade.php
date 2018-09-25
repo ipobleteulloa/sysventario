@@ -21,40 +21,25 @@
   <!-- Easy Autocomplete -->
   <link href="{{ URL::asset('vendor/easy-autocomplete/easy-autocomplete.min.css') }}" rel="stylesheet">
   <link href="{{ URL::asset('vendor/easy-autocomplete/easy-autocomplete.themes.min.css') }}" rel="stylesheet">
-  <!-- HIGHSLIDE -->
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('vendor/highslide/highslide.css') }}" />
-  
-
-
-
 
   <!-- Bootstrap core JavaScript-->
-    <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ URL::asset('vendor/popper/popper.min.js') }}"></script>
-    <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="{{ URL::asset('vendor/datatables/jquery.dataTables.js') }}"></script>
-    <script src="{{ URL::asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="{{ URL::asset('js/sb-admin.min.js') }}"></script>
-    <!-- Custom scripts for this page-->
-    <script src="{{ URL::asset('js/sb-admin-datatables.min.js') }}"></script>
-    <!-- Easy Autocomplete JS -->
-    <script src="{{ URL::asset('vendor/easy-autocomplete/jquery.easy-autocomplete.min.js') }}"></script>
-    <!--<script src="{{ URL::asset('vendor/jquery-ui/jquery-ui.js') }}"></script>-->
-    <!-- HIGHSLIDE -->
-    <script src="{{ URL::asset('vendor/highslide/highslide-with-html.js') }}"></script>
-    <!--
-    2) Optionally override the settings defined at the top
-    of the highslide.js file. The parameter hs.graphicsDir is important!
-    -->
-    <script type="text/javascript">
-      hs.graphicsDir = '{{ URL::asset("vendor/highslide/graphics/") }}/';
-      hs.outlineType = 'rounded-white';
-      hs.wrapperClassName = 'draggable-header';
-    </script>
+  <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ URL::asset('vendor/popper/popper.min.js') }}"></script>
+  <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <!-- Page level plugin JavaScript-->
+  <!-- <script src="{{ URL::asset('vendor/datatables/jquery.dataTables.js') }}"></script> -->
+  <script src="{{ URL::asset('vendor/datatables/datatables.min.js') }}"></script>
+  <script src="{{ URL::asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="{{ URL::asset('js/sb-admin.min.js') }}"></script>
+  <!-- Custom scripts for this page-->
+  <script src="{{ URL::asset('js/sb-admin-datatables.min.js') }}"></script>
+  <!-- Easy Autocomplete JS -->
+  <script src="{{ URL::asset('vendor/easy-autocomplete/jquery.easy-autocomplete.min.js') }}"></script>
+  <!--<script src="{{ URL::asset('vendor/jquery-ui/jquery-ui.js') }}"></script>-->
+
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">

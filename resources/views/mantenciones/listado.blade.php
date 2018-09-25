@@ -30,7 +30,7 @@
         <tbody>
           @foreach ($mantenciones as $mantencion)
           <tr>
-            <td>{{ $mantencion->codigo }}</td>
+            <td><a href="{{ url($mantencion->urlObj()) }}"> {{ $mantencion->codigo }}</a></td>
             <td>{{ $mantencion->nombreEquipo() }}</td>
             <td>{{ $mantencion->detalle }}</td>
             <td>{{ $mantencion->created_at->format('d/m/Y') }}</td>

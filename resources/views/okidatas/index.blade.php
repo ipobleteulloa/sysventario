@@ -3,7 +3,7 @@
 @section ('content')
 <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <a href="{{ url('okidatas/') }}" class="btn btn-secondary btn-sm submenu">Todos</a>
+    <a href="{{ url('okidatas/') }}" class="btn btn-secondary btn-sm submenu">Todas</a>
     <a href="{{ url('okidatas/activas') }}" class="btn btn-secondary btn-sm submenu">Activas</a>
     <a href="{{ url('okidatas/debaja') }}" class="btn btn-secondary btn-sm submenu">De baja</a>
     <a href="{{ url('okidatas/enrevision') }}" class="btn btn-secondary btn-sm submenu">En revisión</a>
@@ -23,9 +23,9 @@
           <thead>
             <tr>
               <th>Codigo</th>
-			  <th>Nombre</th>
-			  <th>Modelo</th>
-			  <th>Posee USB</th>
+              <th>Nombre</th>
+              <th>Modelo</th>
+              <th>Posee USB</th>
               <th>Tipo de conexi&oacute;n</th>
               @if (Auth::check())
               <th>Acciones</th>
@@ -47,8 +47,8 @@
           <tbody>
 			@foreach ($okidatas as $okidata)
 			<tr>
-				<td>{{ $okidata->codigo }}</td>
-				<td><a href="{{ url('okidatas/'.$okidata->id) }}">{{ $okidata->nombre }}</a></td>
+				<td><a href="{{ url('okidatas/'.$okidata->id) }}">{{ $okidata->codigo }}</a></td>
+				<td>{{ $okidata->nombre }}</td>
 				<td>{{ $okidata->modelo }}</td>
 				<td>
 					@if ($okidata->poseeusb == 1)

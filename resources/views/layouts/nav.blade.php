@@ -5,32 +5,38 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mantenciones">
           <a class="nav-link" href="{{ url('mantenciones/') }}">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Mantenciones</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="{{ url('equipos/') }}">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
+          <a class="nav-link" href="{{ url('equipos/activos') }}">
             <i class="fa fa-fw fa-desktop"></i>
             <span class="nav-link-text">Equipos</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notebooks">
+          <a class="nav-link" href="{{ url('notebooks/') }}">
+            <i class="fa fa-fw fa-laptop"></i>
+            <span class="nav-link-text">Notebooks</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Impresoras">
-          <a class="nav-link" href="{{ url('impresoras/') }}">
+          <a class="nav-link" href="{{ url('impresoras/activas') }}">
             <i class="fa fa-fw fa-print"></i>
             <span class="nav-link-text">Impresoras</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Okidatas">
-          <a class="nav-link" href="{{ url('okidatas/') }}">
+          <a class="nav-link" href="{{ url('okidatas/activas') }}">
             <i class="fa fa-fw fa-file-text-o"></i>
             <span class="nav-link-text">Okidatas</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zebras">
-          <a class="nav-link" href="{{ url('zebras/') }}">
+          <a class="nav-link" href="{{ url('zebras/activas') }}">
             <i class="fa fa-fw fa-tags"></i>
             <span class="nav-link-text">Zebras</span>
           </a>

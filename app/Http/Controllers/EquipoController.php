@@ -24,8 +24,10 @@ class EquipoController extends Controller
     public function index()
     {
         $equipos = Equipo::all();
-        $location = "index";
-        return view("equipos.index", compact('equipos','location')); 
+        // $location = "index";
+        // return view("equipos.index", compact('equipos','location')); 
+        return view("equipos.index", compact('equipos')); 
+        //return $this->activos();
     }
 
     /**
@@ -64,7 +66,7 @@ class EquipoController extends Controller
             $codigo = "CMP".$lastequipoid;
 
         $cmp = Equipo::find($equipo->id);
-        $cmp->codigo = $codigo;
+            $cmp->codigo = $codigo;
         $cmp->save();
 
         return redirect('/equipos');
@@ -158,7 +160,6 @@ class EquipoController extends Controller
 
     public function mantencion(Equipo $equipo)
     {
-        $info = $equipo;
-        return view('mantenciones.create', compact('info'));
+        return view('mantenciones.create', compact('equipo'));
     }
 }

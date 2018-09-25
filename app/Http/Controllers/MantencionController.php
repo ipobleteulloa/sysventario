@@ -27,11 +27,10 @@ class MantencionController extends Controller
     public function index()
     {
         $mantenciones = Mantencion::all()->sortByDesc("created_at");
-        // dd($mantenciones);
-        // $mantenciones = Mantencion::orderBy('created_at')->get();
-
-        //return view('mantenciones.index', compact('mantenciones'));
-        return view('mantenciones.index')->with('mantenciones',$mantenciones);
+        //$mantenciones = Mantencion::orderBy('created_at', 'desc')->get();
+        //dd($mantenciones);
+        return view('mantenciones.index', compact('mantenciones'));
+        //return view('mantenciones.index')->with('mantenciones',$mantenciones);
     }
 
     /**
@@ -127,9 +126,9 @@ class MantencionController extends Controller
     public function mantenciones($codigo)
     {
         $mantenciones = Mantencion::where('codigo',$codigo)->orderByDesc('created_at')->get();
+        // return $mantenciones;
         return view('mantenciones.listado')->with('mantenciones',$mantenciones);
     }
-
 
 
 }

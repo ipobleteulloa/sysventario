@@ -3,7 +3,7 @@
 @section ('content')
 <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <a href="{{ url('impresoras/') }}" class="btn btn-secondary btn-sm submenu">Todos</a>
+    <a href="{{ url('impresoras/') }}" class="btn btn-secondary btn-sm submenu">Todas</a>
     <a href="{{ url('impresoras/activas') }}" class="btn btn-secondary btn-sm submenu">Activas</a>
     <a href="{{ url('impresoras/debaja') }}" class="btn btn-secondary btn-sm submenu">De baja</a>
     <a href="{{ url('impresoras/enrevision') }}" class="btn btn-secondary btn-sm submenu">En revisión</a>
@@ -47,8 +47,8 @@
           <tbody>
 			@foreach ($impresoras as $impresora)
 			<tr>
-				<td>{{ $impresora->codigo }}</td>
-				<td><a href="{{ url('impresoras/'. $impresora->id) }}"> {{ $impresora->nombre }} </a></td>
+				<td><a href="{{ url('impresoras/'. $impresora->id) }}">{{ $impresora->codigo }}</a></td>
+				<td>{{ $impresora->nombre }}</td>
 				<td>{{ $impresora->marca }}</td>
 				<td>{{ $impresora->modelo }}</td>
 				<td>{{ $impresora->insumos }}</td>

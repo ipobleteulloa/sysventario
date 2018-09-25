@@ -70,7 +70,6 @@ class Mantencion extends Model
                 return $this->zebra;
                 break;
             }
-
     }
 
     public function nombreEquipo()
@@ -85,6 +84,46 @@ class Mantencion extends Model
           return $this->tipoObj()->sector->encargados;
         else
           return NULL; 
+    }
+
+    public function urlMantenciones()
+    {
+        $codigo = $this->codigo;
+        $cod = substr($codigo, 0, 3);
+            switch ($cod) {
+            case "CMP":
+                return 'equipos/'. $codigo .'/mantenciones';
+                break;
+            case "IMP":
+                return 'impresoras/'. $codigo .'/mantenciones';
+                break;
+            case "OKI":
+                return 'okidatas/'. $codigo .'/mantenciones';
+                break;
+            case "ZEB":
+                return 'zebras/'. $codigo .'/mantenciones';
+                break;
+            }
+    }
+
+    public function urlObj()
+    {
+        $codigo = $this->codigo;
+        $cod = substr($codigo, 0, 3);
+            switch ($cod) {
+            case "CMP":
+                return 'equipos/'. $this->tipoObj()->id;
+                break;
+            case "IMP":
+                return 'impresoras/'. $this->tipoObj()->id;
+                break;
+            case "OKI":
+                return 'okidatas/'. $this->tipoObj()->id;
+                break;
+            case "ZEB":
+                return 'zebras/'. $this->tipoObj()->id;
+                break;
+            }
     }
 
 

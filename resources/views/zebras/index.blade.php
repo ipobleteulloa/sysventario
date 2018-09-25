@@ -3,7 +3,7 @@
 @section ('content')
 <!-- Breadcrumbs-->
   <ol class="breadcrumb">
-    <a href="{{ url('zebras/') }}" class="btn btn-secondary btn-sm submenu">Todos</a>
+    <a href="{{ url('zebras/') }}" class="btn btn-secondary btn-sm submenu">Todas</a>
     <a href="{{ url('zebras/activas') }}" class="btn btn-secondary btn-sm submenu">Activas</a>
     <a href="{{ url('zebras/debaja') }}" class="btn btn-secondary btn-sm submenu">De baja</a>
     <a href="{{ url('zebras/enrevision') }}" class="btn btn-secondary btn-sm submenu">En revisión</a>
@@ -43,38 +43,38 @@
             </tr>
           </tfoot>
           <tbody>
-			@foreach ($zebras as $zebra)
-			<tr>
-				<td>{{ $zebra->codigo }}</td>
-				<td><a href="{{ url('zebras/'.$zebra->id) }}"> {{ $zebra->nombre }}</a></td>
-				<td>{{ $zebra->modelo }}</td>
-				<td>{{ $zebra->tipo_conexion }}</td>
-				@if (Auth::check())
+      @foreach ($zebras as $zebra)
+      <tr>
+        <td><a href="{{ url('zebras/'.$zebra->id) }}">{{ $zebra->codigo }}</a></td>
+        <td>{{ $zebra->nombre }}</td>
+        <td>{{ $zebra->modelo }}</td>
+        <td>{{ $zebra->tipo_conexion }}</td>
+        @if (Auth::check())
         <td>
-					<div class="text-center">
-						<div class="acciones">
-			        <a href="{{ url('zebras/'. $zebra->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
-			      </div>
-			      &nbsp;
+          <div class="text-center">
+            <div class="acciones">
+              <a href="{{ url('zebras/'. $zebra->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
+            </div>
+            &nbsp;
             <div class="acciones">
                 <a href="{{ url('zebras/'. $zebra->id .'/mantencion') }}" class="btn btn-success btn-sm">Mantenci&oacute;n</a>
             </div>
             @if( $zebra->estado_id != "2")
-			      &nbsp;
-						<div class="acciones">
-							<form action="{{ url('zebras/'. $zebra->id) }}" method="POST" onsubmit="return confirm('¿Desea dar de baja esta zebra?')">
-                  {{ method_field('patch') }}
-                  {{ csrf_field() }}
-                  <input type="hidden" name="dardebaja" value="dardebaja" />
-                  <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
-              </form>
-            </div>
-		        @endif
-					</div>
-				</td>
+            &nbsp;
+              <div class="acciones">
+                <form action="{{ url('zebras/'. $zebra->id) }}" method="POST" onsubmit="return confirm('¿Desea dar de baja esta zebra?')">
+                    {{ method_field('patch') }}
+                    {{ csrf_field() }}
+                    <input type="hidden" name="dardebaja" value="dardebaja" />
+                    <button class="btn btn-danger btn-sm" type="submit">Dar de baja</button>
+                </form>
+              </div>
+            @endif
+          </div>
+        </td>
         @endif
-			</tr>
-			@endforeach		
+      </tr>
+      @endforeach   
           </tbody>
         </table>
       </div>

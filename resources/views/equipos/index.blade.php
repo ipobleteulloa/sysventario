@@ -25,7 +25,6 @@
             <tr>
               <th>Codigo</th>
               <th>Nombre</th>
-              <!-- <th>Ubicación</th> -->
               <th>Sector</th>
               @if (Auth::check())
               <th>Acciones</th>
@@ -45,16 +44,12 @@
           <tbody>
 			@foreach ($equipos as $equipo)
 			<tr>
-				<td>{{ $equipo->codigo }}</td>
-        <td>
-          <a href="{{ url('equipos/'. $equipo->id) }}">
-            {{ $equipo->nombre }}
-          </a>
-        </td>
+				<td><a href="{{ url('equipos/'. $equipo->id) }}">{{ $equipo->codigo }}</a></td>
+        <td>{{ $equipo->nombre }}</td>
 				<td>{{ $equipo->sector->nombre }}</td>
 				@if (Auth::check())
         <td>
-					<div> <!-- class="text-center" -->
+					<div>
 						<div class="acciones">
               <a href="{{ url('equipos/'. $equipo->id .'/edit') }}" class="btn btn-secondary btn-sm">Editar</a>
             </div>

@@ -19,13 +19,10 @@ Route::get('/home', 'EquipoController@activos')->name('home');
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
 Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
-
-
 Route::get('equipos/{codigo}/mantenciones', 'MantencionController@mantenciones');
 Route::get('impresoras/{impresora}/mantenciones', 'MantencionController@mantenciones');
 Route::get('okidatas/{okidata}/mantenciones', 'MantencionController@mantenciones');
 Route::get('zebras/{zebra}/mantenciones', 'MantencionController@mantenciones');
-//Route::resource('equipos.mantenciones', 'MantencionController');
 Route::resource('mantenciones', 'MantencionController');
 
 
@@ -36,6 +33,15 @@ Route::get('/equipos/enrevision', 'EquipoController@enrevision');
 Route::get('/equipos/contingencia', 'EquipoController@contingencia');
 Route::get('equipos/{equipo}/mantencion', 'EquipoController@mantencion');
 Route::resource('equipos', 'EquipoController');
+
+
+//Notebooks
+Route::get('/notebooks/activos', 'NotebookController@activos');
+Route::get('/notebooks/debaja', 'NotebookController@debaja');
+Route::get('/notebooks/enrevision', 'NotebookController@enrevision');
+Route::get('/notebooks/contingencia', 'NotebookController@contingencia');
+Route::get('notebooks/{equipo}/mantencion', 'NotebookController@mantencion');
+Route::resource('notebooks', 'NotebookController');
 
 
 //Impresoras
