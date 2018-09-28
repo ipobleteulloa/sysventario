@@ -84,11 +84,12 @@ Route::patch('/sectores/{sector}', 'SectorController@update');
 Route::delete('/sectores/{sector}', 'SectorController@destroy');
 Route::resource('sectores','SectorController');
 
-//Notebooks
-Route::resource('notebooks','NotebookController');
 
 //Encargados
 Route::resource('encargados','EncargadoController');
+
+//Usuarios
+Route::resource('usuarios','UsuarioController');
 
 //Revision
 Route::resource('revisions','RevisionController');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Notebook;
-//use App\Sector;
+use App\Entrega;
 use App\SistemaOperativo;
 use Illuminate\Http\Request;
 
@@ -165,6 +165,7 @@ class NotebookController extends Controller
 
     public function mantencion(Notebook $notebook)
     {
-        return view('mantenciones.create', compact('notebook'));
+        $info = $notebook
+        return view('mantenciones.create', compact('info'));
     }
 }

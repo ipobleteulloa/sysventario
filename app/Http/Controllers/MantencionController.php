@@ -40,7 +40,7 @@ class MantencionController extends Controller
      */
     public function create()
     {
-        //return view('mantenciones.create');
+        return view('mantenciones.create');
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notebook extends Model
 {
-    protected $fillable = ['codigo', 'marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'estado_id', 'sistemaoperativo_id', 'mod_bateria', 'mod_cargador', 'observaciones'];
+    protected $fillable = ['codigo', 'marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'estado_id', 'sistemaoperativo_id', 'mod_bateria', 'mod_cargador', 'observaciones','candado'];
 
     public static function activos()
     {

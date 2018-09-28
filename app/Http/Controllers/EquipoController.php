@@ -160,6 +160,7 @@ class EquipoController extends Controller
 
     public function mantencion(Equipo $equipo)
     {
-        return view('mantenciones.create', compact('equipo'));
+        $info = $equipo;
+        return view('mantenciones.create', compact('info'));
     }
 }
