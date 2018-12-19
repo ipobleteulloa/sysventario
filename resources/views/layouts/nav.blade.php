@@ -17,12 +17,12 @@
             <span class="nav-link-text">Equipos</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notebooks">
+       <!--  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notebooks">
           <a class="nav-link" href="{{ url('notebooks/') }}">
             <i class="fa fa-fw fa-laptop"></i>
             <span class="nav-link-text">Notebooks</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Impresoras">
           <a class="nav-link" href="{{ url('impresoras/activas') }}">
             <i class="fa fa-fw fa-print"></i>

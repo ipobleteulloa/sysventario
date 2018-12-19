@@ -54,8 +54,8 @@ class Mantencion extends Model
 
     public function tipoObj()
     {
-        $codigo = $this->codigo;
-        $cod = substr($codigo, 0, 3);
+        //$codigo = $this->codigo;
+        $cod = substr($this->codigo, 0, 3);
             switch ($cod) {
             case "CMP":
                 return $this->equipo;

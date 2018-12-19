@@ -165,7 +165,7 @@ class NotebookController extends Controller
 
     public function mantencion(Notebook $notebook)
     {
-        $info = $notebook
+        $info = $notebook;
         return view('mantenciones.create', compact('info'));
     }
 }

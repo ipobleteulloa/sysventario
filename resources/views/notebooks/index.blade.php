@@ -47,7 +47,7 @@
             @foreach ($notebooks as $notebook)
             <tr>
               <td><a href="{{ url('notebooks/'. $notebook->id) }}"> {{ $notebook->codigo }} </a></td>
-              <td>Usuario</td>
+              <td>{{ $notebook->entregaActual->usuario->nombre_completo ?? 'SIN USUARIO ASIGNADO' }}</td>
               <td> {{ $notebook->marca }} </td>
               <td> {{ $notebook->modelo }} </td>
               @if (Auth::check())

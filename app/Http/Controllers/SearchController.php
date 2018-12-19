@@ -94,4 +94,21 @@ class SearchController extends Controller
         return response()->json($term);
 	}
 
+	public function usuarioAutocomplete(){
+	$term = Input::get('term');
+	
+	$results = array();
+	
+	$queries = DB::table('usuarios')
+		->where('nombre', 'LIKE', '%'.$term.'%')
+		->orWhere('apellidos', 'LIKE', '%'.$term.'%')
+		->take(5)->get();
+	
+	foreach ($queries as $query)
+	{
+	    $results[] = [ 'id' => $query->id, 'value' => $query->nombre.' '.$query->apellidos ];
+	}
+	return Response::json($results);
+	}
+
 }
