@@ -14,6 +14,7 @@
         </form>
         @endif
       <a href="{{ url('notebooks/'. $notebook->id .'/edit') }}" class="btn btn-secondary f_right ml-2">Editar</a>
+      <a href="{{ url('notebooks/') }}" class="btn btn-info f_right ml-2">Asignar a un usuario</a>
       @endif
       <a href="{{ url('notebooks/'. $notebook->codigo .'/mantenciones') }}" class="btn btn-primary f_right ml-2">Ver mantenciones</a>
       @if (Auth::check())
@@ -67,14 +68,13 @@
               @endif
             </tr>
             <tr>
-              <td width="20%"><b>Ubicación</b></td><td width="80%"> {{ $notebook->ubicacion }} </td>
-            </tr>
-            <tr>
               <td width="20%"><b>Estado</b></td><td width="80%"> {{ $notebook->estado->nombre }} </td>
             </tr>
+            @if (Auth::check())
             <tr>
               <td width="20%"><b>Candado</b></td><td width="80%"> {{ $notebook->candado }} </td>
             </tr>
+            @endif
             <tr>
               <td width="20%"><b>Observaciones</b></td><td width="80%"> {{ $notebook->observaciones }} </td>
             </tr>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Notebook;
+use App\Sector;
 use App\Entrega;
+use App\Notebook;
 use App\SistemaOperativo;
 use Illuminate\Http\Request;
 
@@ -119,7 +120,14 @@ class NotebookController extends Controller
         }
         else {
             $this->validate(request(), [
-                'nombre' => 'required'
+                'marca' => 'required',
+                'modelo' => 'required',
+                'pantalla' => 'required',
+                'procesador' => 'required',
+                'ram' => 'required',
+                'hdd' => 'required',
+                'nserie' => 'required',
+                'mod_cargador' => 'required',
             ]);
         
             $modificaciones = request((['marca', 'modelo', 'pantalla', 'procesador', 'ram', 'hdd', 'nserie', 'mod_bateria', 'mod_cargador', 'observaciones', 'estado_id', 'sistemaoperativo_id']));
