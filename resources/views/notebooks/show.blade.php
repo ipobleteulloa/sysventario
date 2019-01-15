@@ -13,8 +13,14 @@
             <button class="btn btn-danger" type="submit">Dar de baja</button>
         </form>
         @endif
-      <a href="{{ url('notebooks/'. $notebook->id .'/edit') }}" class="btn btn-secondary f_right ml-2">Editar</a>
-      <a href="{{ url('notebooks/') }}" class="btn btn-info f_right ml-2">Asignar a un usuario</a>
+        <a href="{{ url('notebooks/'. $notebook->id .'/edit') }}" class="btn btn-secondary f_right ml-2">Editar</a>
+        @if( $notebook->usuarioActual() == null)
+        <a href="{{ url('notebooks/') }}" class="btn btn-info f_right ml-2">Asignar a un usuario</a>
+        
+        
+        @else
+        <a href="{{ url('notebooks/') }}" class="btn btn-info f_right ml-2">Retirar notebook</a>
+        @endif
       @endif
       <a href="{{ url('notebooks/'. $notebook->codigo .'/mantenciones') }}" class="btn btn-primary f_right ml-2">Ver mantenciones</a>
       @if (Auth::check())
@@ -33,7 +39,8 @@
               <td width="20%"><b>N&uacute;mero de serie</b></td><td width="80%"> {{ $notebook->nserie }} </td>
             </tr>
             <tr>
-              <td width="20%"><b>Usuario asignado</b></td><td width="80%"> {{ $notebook->entregaActual->usuario->nombre_completo ?? 'SIN USUARIO ASIGNADO' }} </td>
+              <!-- <td width="20%"><b>Usuario asignado</b></td><td width="80%"> {{ $notebook->entregaActual->usuario->nombre_completo ?? 'SIN USUARIO ASIGNADO' }} </td> -->
+              <td width="20%"><b>Usuario asignado</b></td><td width="80%"> {{ $notebook->usuarioActual()->nombre_completo ?? 'SIN USUARIO ASIGNADO' }} </td>
             </tr>
             <tr>
               <td width="20%"><b>Marca</b></td><td width="80%"> {{ $notebook->marca }} </td>

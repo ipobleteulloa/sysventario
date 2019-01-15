@@ -17,6 +17,8 @@ class Entrega extends Model
     	return $this->belongsTo('App\Usuario');
     }
 
+    public $with = ['usuario'];
+
     public function scopeActual($query)
     {
         return $query->where('fecha_retiro', NULL);

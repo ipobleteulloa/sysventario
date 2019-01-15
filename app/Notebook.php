@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use App\Entrega;
+use App\Entrega;
+use App\Usuario;
+
 
 class Notebook extends Model
 {
@@ -61,13 +63,29 @@ class Notebook extends Model
 
     public function ultimoUsuario()
     {
-        //return $this->ultimaEntrega()->usuario; 
+        //return $this->ultimaEntrega->usuario; 
     }
 
     public function entregaActual()
     {
-        return $this->hasOne('App\Entrega', 'codigo', 'codigo')->where('fecha_retiro',null);
+        // return $this->hasOne('App\Entrega', 'codigo', 'codigo')->where('fecha_retiro',null)->latest();
+        return $this->hasOne('App\Entrega', 'codigo', 'codigo')->whereNull('fecha_retiro')->latest();
     }
+
+    public function usuarioActual()
+    {
+        /*if($this->entregaActual != null)
+            return $this->entregaActual->usuario;
+        else 
+            return null;*/
+        return $this->entregaActual->usuario ?? NULL;
+    }
+
+    /* Hace lo mismo que la función usuarioActual() pero se invoca como atributo*/
+    /*public function getUsuarioActualAttribute()
+    {
+        return $this->entregaActual->usuario;
+    }*/
 
 
 }
