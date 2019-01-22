@@ -99,7 +99,6 @@ class NotebookController extends Controller
      */
     public function edit(Notebook $notebook)
     {
-        $sectores = Sector::all()->sortBy('nombre');
         $soperativos = SistemaOperativo::all()->sortBy('nombre');
         return view('notebooks.edit', compact('notebook', 'sectores', 'soperativos'));
     }
@@ -114,9 +113,16 @@ class NotebookController extends Controller
     public function update(Request $request, Notebook $notebook)
     {
         //Validaciones para el boton "Dar de baja"
-        if($notebook['estado_id']!='2' && $request['dardebaja'] == 'dardebaja'){
+        if($notebook['estado_id']!='2' && $request['dardebaja'] == 'dardebaja') {
             $notebook->estado_id = '2';
             $notebook->save();
+
+            //Si el equipo se da de baja, se le agrega fecha de retiro en caso de haber estado asignado
+            if(!is_null($notebook->entregaActual)) {
+                $entrega = $notebook->entregaActual;
+                $entrega['fecha_retiro'] = NOW();
+                $entrega->save(); 
+            }
         }
         else {
             $this->validate(request(), [
@@ -147,6 +153,16 @@ class NotebookController extends Controller
         //
     }
 
+    public function retirar(Notebook $notebook)
+    {
+        if(!is_null($notebook->entregaActual)) {
+            $entrega = $notebook->entregaActual;
+            $entrega['fecha_retiro'] = NOW();
+            $entrega->save(); 
+        }
+        return redirect('/notebooks');
+    }
+
     public function activos()
     {
         $notebooks = Notebook::activos();
@@ -173,7 +189,8 @@ class NotebookController extends Controller
 
     public function mantencion(Notebook $notebook)
     {
-        $info = $notebook;
-        return view('mantenciones.create', compact('info'));
+        //$info = $notebook;
+        //return view('mantenciones.create', compact('info'));
+        return view('mantenciones.create', compact('notebook'));
     }
 }

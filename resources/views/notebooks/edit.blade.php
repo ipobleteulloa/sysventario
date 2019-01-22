@@ -90,22 +90,30 @@
           </select>
         </div>
         <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-12">
-              <label for="Estado">Estado</label>
-              <div class="funkyradio">
-                <div class="funkyradio-success  col-md-5">
-                  <input type="radio" name="estado_id" id="radioe1" value="1" CHECKED />
-                  <label for="radioe1">Activo</label>
-                </div>
-                <div class="funkyradio-default col-md-5">
-                  <input type="radio" name="estado_id" id="radioe3" value="4" />
-                  <label for="radioe3">Contingencia</label>
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="Estado">Estado  </label>
+                <div class="funkyradio">
+                    <div class="funkyradio-success  col-md-5">
+                      <input type="radio" name="estado_id" id="radio1" value="1" {{ $notebook->estado_id == '1' ? 'CHECKED' : '' }} />
+                      <label for="radio1">Activo</label>
+                    </div>
+                    <div class="funkyradio-danger  col-md-5">
+                      <input type="radio" name="estado_id" id="radio2" value="2" {{ $notebook->estado_id == '2' ? 'CHECKED' : '' }} />
+                      <label for="radio2">De baja</label>
+                    </div>
+                    <div class="funkyradio-warning  col-md-5">
+                      <input type="radio" name="estado_id" id="radio3" value="3" {{ $notebook->estado_id == '3' ? 'CHECKED' : '' }} />
+                      <label for="radio3">En revisi&oacute;n</label>
+                    </div>
+                    <div class="funkyradio-default col-md-5">
+                      <input type="radio" name="estado_id" id="radio4" value="4" {{ $notebook->estado_id == '4' ? 'CHECKED' : '' }} />
+                      <label for="radio4">Contingencia</label>
+                    </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         <div class="form-group">
           <label for="Observaciones">Observaciones</label>
           <textarea class="form-control" rows="5" id="InputObservaciones" name="observaciones">{{ $notebook->observaciones }}</textarea>

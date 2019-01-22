@@ -40,7 +40,8 @@ Route::get('/notebooks/activos', 'NotebookController@activos');
 Route::get('/notebooks/debaja', 'NotebookController@debaja');
 Route::get('/notebooks/enrevision', 'NotebookController@enrevision');
 Route::get('/notebooks/contingencia', 'NotebookController@contingencia');
-Route::get('notebooks/{equipo}/mantencion', 'NotebookController@mantencion');
+Route::get('notebooks/{notebook}/mantencion', 'NotebookController@mantencion');
+Route::get('notebooks/{notebook}/retirar', 'NotebookController@retirar');
 Route::resource('notebooks', 'NotebookController');
 
 
