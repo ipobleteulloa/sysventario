@@ -20,32 +20,27 @@
                       url: "{{ URL::to('mantenciones/autocomplete/') }}",
                       categories: [{
                           listLocation: "equipos",
-                          maxNumberOfElements: 3,
-                          header: "Equipos"
+                          maxNumberOfElements: 5,
+                          header: "<ins>EQUIPOS</ins>"
                       }, {
                           listLocation: "impresoras",
-                          maxNumberOfElements: 3,
-                          header: "Impresoras"
+                          maxNumberOfElements: 4 ,
+                          header: "<ins>IMPRESORAS</ins>"
                       }, {
                           listLocation: "okidatas",
                           maxNumberOfElements: 4,
-                          header: "Okidatas"
+                          header: "<ins>OKIDATAS</ins>"
                       }, {
                           listLocation: "zebras",
                           maxNumberOfElements: 4,
-                          header: "Zebras"
+                          header: "<ins>ZEBRAS</ins>"
                       }],
 
                       getValue: function(element) {
-                          return element.nombre;
+                          return element.codigo +" - "+element.nombre;
                       },
 
-                      template: {
-                          type: "description",
-                          fields: {
-                              description: "codigo"
-                          }
-                      },
+                      
 
                       list: {
                           maxNumberOfElements: 12,
