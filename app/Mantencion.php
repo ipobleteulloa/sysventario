@@ -16,6 +16,10 @@ class Mantencion extends Model
     {
         return $this->belongsTo('App\Equipo', 'codigo', 'codigo');
     }
+    public function notebook()
+    {
+        return $this->belongsTo('App\Notebook', 'codigo', 'codigo');
+    }
 
     public function impresora()
     {
@@ -60,6 +64,9 @@ class Mantencion extends Model
             case "CMP":
                 return $this->equipo;
                 break;
+            case "NBK":
+                return $this->notebook;
+                break;
             case "IMP":
                 return $this->impresora;
                 break;
@@ -74,7 +81,11 @@ class Mantencion extends Model
 
     public function nombreEquipo()
     {
-        return $this->tipoObj()->nombre;
+        $cod = substr($this->codigo, 0, 3);
+        if ($cod == 'NBK')
+            return $this->tipoObj()->marca. ' ' .$this->tipoObj()->modelo;
+        else
+            return $this->tipoObj()->nombre;
     }
 
     
@@ -93,6 +104,9 @@ class Mantencion extends Model
             switch ($cod) {
             case "CMP":
                 return 'equipos/'. $codigo .'/mantenciones';
+                break;
+            case "NBK":
+                return 'notebooks/'. $codigo .'/mantenciones';
                 break;
             case "IMP":
                 return 'impresoras/'. $codigo .'/mantenciones';
@@ -113,6 +127,9 @@ class Mantencion extends Model
             switch ($cod) {
             case "CMP":
                 return 'equipos/'. $this->tipoObj()->id;
+                break;
+            case "NBK":
+                return 'notebooks/'. $this->tipoObj()->id;
                 break;
             case "IMP":
                 return 'impresoras/'. $this->tipoObj()->id;

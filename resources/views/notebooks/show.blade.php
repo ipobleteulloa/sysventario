@@ -15,7 +15,7 @@
         @endif
         <a href="{{ url('notebooks/'. $notebook->id .'/edit') }}" class="btn btn-secondary f_right ml-2">Editar</a>
         @if( $notebook->usuarioActual() == null)
-          <a href="{{ url('notebooks/') }}" class="btn btn-info f_right ml-2">Asignar a un usuario</a>
+          <a href="{{ url('notebooks/'. $notebook->id .'/asignar') }}" class="btn btn-info f_right ml-2">Asignar a un usuario</a>
         @else
           <a href="{{ url('notebooks/' . $notebook->id . '/retirar') }}" class="btn btn-info f_right ml-2">Retirar notebook</a>
         @endif

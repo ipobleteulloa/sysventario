@@ -18,8 +18,8 @@ Route::get('/home', 'EquipoController@activos')->name('home');
 
 //Mantenciones
 Route::get('/mantenciones/buscar', 'MantencionController@buscar');
-Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 Route::get('equipos/{codigo}/mantenciones', 'MantencionController@mantenciones');
+Route::get('notebooks/{codigo}/mantenciones', 'MantencionController@mantenciones');
 Route::get('impresoras/{impresora}/mantenciones', 'MantencionController@mantenciones');
 Route::get('okidatas/{okidata}/mantenciones', 'MantencionController@mantenciones');
 Route::get('zebras/{zebra}/mantenciones', 'MantencionController@mantenciones');
@@ -42,8 +42,12 @@ Route::get('/notebooks/enrevision', 'NotebookController@enrevision');
 Route::get('/notebooks/contingencia', 'NotebookController@contingencia');
 Route::get('notebooks/{notebook}/mantencion', 'NotebookController@mantencion');
 Route::get('notebooks/{notebook}/retirar', 'NotebookController@retirar');
+Route::get('notebooks/{notebook}/asignar', 'NotebookController@asignar');
 Route::resource('notebooks', 'NotebookController');
 
+//Búsquedas
+Route::get('/mantenciones/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
+Route::get('/entregas/autocomplete', 'SearchController@usuarioAutocomplete')->name('usuarioAutocomplete');
 
 //Impresoras
 Route::get('/impresoras/debaja', 'ImpresorasController@debaja');
@@ -73,16 +77,16 @@ Route::resource('zebras', 'ZebrasController');
 
 
 //Sistema Operativo
-Route::get('/sistemaoperativo/{sistemaOperativo}/edit', 'SistemaOperativoController@edit');
-Route::patch('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@update');
-Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
+//Route::get('/sistemaoperativo/{sistemaOperativo}/edit', 'SistemaOperativoController@edit');
+//Route::patch('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@update');
+//Route::delete('/sistemaoperativo/{sistemaOperativo}', 'SistemaOperativoController@destroy');
 Route::resource('sistemaoperativo', 'SistemaOperativoController');
 
 
 //Sectores
-Route::get('/sectores/{sector}/edit', 'SectorController@edit');
-Route::patch('/sectores/{sector}', 'SectorController@update');
-Route::delete('/sectores/{sector}', 'SectorController@destroy');
+//Route::get('/sectores/{sector}/edit', 'SectorController@edit');
+//Route::patch('/sectores/{sector}', 'SectorController@update');
+//Route::delete('/sectores/{sector}', 'SectorController@destroy');
 Route::resource('sectores','SectorController');
 
 
@@ -91,6 +95,9 @@ Route::resource('encargados','EncargadoController');
 
 //Usuarios
 Route::resource('usuarios','UsuarioController');
+
+//Entregas
+Route::resource('entregas','EntregaController');
 
 //Revision
 Route::resource('revisions','RevisionController');

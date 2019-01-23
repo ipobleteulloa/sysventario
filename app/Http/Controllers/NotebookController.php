@@ -153,6 +153,11 @@ class NotebookController extends Controller
         //
     }
 
+    public function asignar(Notebook $notebook)
+    {
+        return view('entregas.create', compact('notebook'));
+    }
+
     public function retirar(Notebook $notebook)
     {
         if(!is_null($notebook->entregaActual)) {
@@ -189,8 +194,8 @@ class NotebookController extends Controller
 
     public function mantencion(Notebook $notebook)
     {
-        //$info = $notebook;
-        //return view('mantenciones.create', compact('info'));
-        return view('mantenciones.create', compact('notebook'));
+        $info = $notebook;
+        return view('mantenciones.create', compact('info'));
+        //return view('mantenciones.create', compact('notebook'));
     }
 }

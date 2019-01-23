@@ -35,7 +35,12 @@ class EntregaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entrega = new Entrega;
+        $entrega->codigo = $request->input('codigo');
+        $entrega->usuario_id = $request->input('usuario_id');
+        $entrega->fecha_entrega = NOW();
+        $entrega->save();
+        return redirect('/notebooks');
     }
 
     /**

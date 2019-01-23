@@ -40,7 +40,12 @@
                           return element.codigo +" - "+element.nombre;
                       },
 
-                      
+                      /*template: {
+                          type: "description",
+                          fields: {
+                              description: "codigo"
+                          }
+                      },*/
 
                       list: {
                           maxNumberOfElements: 12,
