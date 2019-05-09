@@ -58,6 +58,9 @@
               <td width="20%"><b>Ubicación</b></td><td width="80%"> {{ $equipo->ubicacion }} </td>
             </tr>
             <tr>
+              <td width="20%"><b>Observaciones</b></td><td width="80%"> {{ $equipo->observaciones }} </td>
+            </tr>
+            <tr>
               <td width="20%"><b>Estado</b></td><td width="80%"> {{ $equipo->estado->nombre }} </td>
             </tr>
           </tbody>

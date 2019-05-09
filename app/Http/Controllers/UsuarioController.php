@@ -36,7 +36,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'rut' => 'required'
+        ]);
+        Usuario::create(request((['nombre', 'apellidos','rut','email'])));
+        return redirect('/usuarios');
     }
 
     /**
@@ -70,7 +77,18 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        $this->validate(request(), [
+
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'rut' => 'required',
+            'email' => 'email'
+        ]);
+
+        $modificaciones = request((['nombre', 'apellidos', 'rut', 'email']));
+        $usuario->update($modificaciones);
+
+        return redirect('/usuarios');
     }
 
     /**

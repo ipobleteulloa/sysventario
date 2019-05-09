@@ -96,6 +96,14 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
+                <label for="Observaciones">Observaciones  </label>
+                <textarea class="form-control" id="InputObservaciones" name="observaciones">{{ $equipo->observaciones }}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
                 <label for="Estado">Estado  </label>
                 <div class="funkyradio">
                     <div class="funkyradio-success  col-md-5">

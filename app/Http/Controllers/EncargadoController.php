@@ -85,7 +85,6 @@ class EncargadoController extends Controller
      */
     public function update(Request $request, Encargado $encargado)
     {
-        
         $this->validate(request(), [
 
             'nombre' => 'required',

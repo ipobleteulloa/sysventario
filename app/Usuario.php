@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
-    protected $fillable = ['nombre', 'apellidos', 'run'];
+    protected $fillable = ['nombre', 'apellidos', 'rut', 'email'];
 
     public function getNombreCompletoAttribute()
     {

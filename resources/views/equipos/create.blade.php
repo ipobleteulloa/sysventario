@@ -74,8 +74,16 @@
         <div class="form-group">
           <div class="form-row">
             <div class="col-md-12">
-              <label for="ConfirmPassword">Ubicaci&oacute;n 	</label>
+              <label for="Ubicacion">Ubicaci&oacute;n 	</label>
               <input class="form-control" id="InputUbicacion" name="ubicacion" type="text" placeholder="Ingrese la ubicaci&oacute;n donde se usar&aacute;">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="Observaciones">Observaciones  </label>
+              <textarea class="form-control" id="InputObservaciones" name="observaciones"></textarea>
             </div>
           </div>
         </div>

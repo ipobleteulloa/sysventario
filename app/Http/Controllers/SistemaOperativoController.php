@@ -72,6 +72,8 @@ class SistemaOperativoController extends Controller
      */
     public function edit(SistemaOperativo $sistemaOperativo)
     {
+        
+        dd($sistemaOperativo);
         return view('sistemaoperativo.edit',compact('sistemaOperativo'));
     }
 

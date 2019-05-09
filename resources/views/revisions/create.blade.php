@@ -27,6 +27,10 @@
             <label for="codigo">C&oacute;digo</label>
             <input class="form-control" id="codigo" name="codigo" nametype="codigo">
           </div>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" id="nombre" name="nombre" nametype="nombre">
+          </div>
           <input type="submit" class="btn btn-primary btn-block" value="Registrar" />
         </form>
         @include ('layouts.errors')

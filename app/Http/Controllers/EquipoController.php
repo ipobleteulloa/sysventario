@@ -56,7 +56,7 @@ class EquipoController extends Controller
             'sector_id' => 'required'
         ]);
 
-        $equipo =Equipo::create(request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id'])));
+        $equipo =Equipo::create(request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id', 'observaciones'])));
         $lastequipoid = $equipo->id;
         if (strlen($lastequipoid) == 1) 
             $codigo = "CMP00".$lastequipoid;
@@ -117,7 +117,7 @@ class EquipoController extends Controller
                 'nombre' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id']));
+            $modificaciones = request((['nombre', 'procesador', 'ram', 'hdd', 'placa_madre', 'ubicacion', 'sector_id', 'estado_id', 'sistemaoperativo_id', 'observaciones']));
             $equipo->update($modificaciones);
         }
         return redirect('/equipos');

@@ -41,8 +41,7 @@
           </div>
         </div>
         <br/>
-        <input class="btn btn-primary btn-block" id="SOSubmit" type="submit" value="Editar Encargado">
-            <!--<a class="btn btn-primary btn-block" href="login.html">Agregar Zebra</a>-->
+        <input class="btn btn-primary btn-block" id="EncargadoSubmit" type="submit" value="Editar Encargado">
       @include ('layouts.errors')
       </form>
     </div>

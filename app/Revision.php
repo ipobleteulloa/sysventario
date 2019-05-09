@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Revision extends Model
 {
-    protected $fillable = ['codigo'];
+    protected $fillable = ['codigo', 'nombre'];
 }

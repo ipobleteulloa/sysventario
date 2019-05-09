@@ -39,7 +39,7 @@ class RevisionController extends Controller
             'codigo' => 'required'
         ]);
 
-        $pc = Revision::create(request(['codigo']));
+        $pc = Revision::create(request(['codigo', 'nombre']));
 
         /*
         $rev = new Revision;
