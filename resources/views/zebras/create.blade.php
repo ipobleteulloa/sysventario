@@ -10,15 +10,15 @@
     		  <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleInputName">Nombre zebra</label>
+                <label for="InputNombre">Nombre zebra</label>
                 <input class="form-control" id="InputNombre" name="nombre" type="text" placeholder="Ingrese el nombre" required>
               </div>
     			  </div>
-          </div>  
+          </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-        				<label for="exampleInputEmail1">Modelo</label>
+        				<label for="InputModelo">Modelo</label>
         				<input class="form-control" id="InputModelo" name="modelo" type="text" placeholder="Ingrese el modelo" required>
     			    </div>
     			  </div>
@@ -26,7 +26,15 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Ubicaci&oacute;n 	</label>
+                <label for="InputNSerie">N&uacute;mero de serie</label>
+                <input class="form-control" id="InputNSerie" name="nserie" type="text" placeholder="Ingrese el n&uacute;mero de serie" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="ConfirmPassword">Ubicaci&oacute;n 	</label>
                 <input class="form-control" id="InputUbicacion" name="ubicacion" type="text" placeholder="Ingrese la ubicaci&oacute;n donde se usar&aacute;">
               </div>
             </div>
@@ -34,7 +42,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Tipo de conexi&oacute;n  </label>
+                <label for="ConfirmPassword">Tipo de conexi&oacute;n  </label>
                 <input class="form-control" id="InputTipoConexion" name="tipo_conexion" type="text" placeholder="Ingrese el tipo de conexi&oacute;n al pc">
               </div>
             </div>

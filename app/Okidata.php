@@ -31,7 +31,7 @@ class Okidata extends Model
 		return static::where('codigo', $codigo )->first();
 	}
 
-	protected $fillable = ['codigo', 'nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'created_at', 'updated_at', 'sector_id'];
+	protected $fillable = ['codigo', 'nombre', 'modelo', 'nserie', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'created_at', 'updated_at', 'sector_id'];
 
 	public function estado()
     {

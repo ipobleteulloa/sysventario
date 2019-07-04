@@ -22,6 +22,14 @@
         				<input class="form-control" id="InputModelo" name="modelo" type="text" placeholder="Ingrese el modelo" required>
     			    </div>
     			  </div>
+          </div>  
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="exampleInputEmail1">N&uacute;mero de serie</label>
+                <input class="form-control" id="InputNSerie" name="nserie" type="text" placeholder="Ingrese el n&uacute;mero de serie" required>
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <div class="form-row">

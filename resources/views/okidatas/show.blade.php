@@ -34,10 +34,10 @@
               <td width="20%"><b>Modelo</b></td><td width="80%"> {{ $okidata->modelo }} </td>
             </tr>
             <tr>
-              <td width="20%"><b>Insumos</b></td><td width="80%"> {{ $okidata->insumos }} </td>
+              <td width="20%"><b>N&uacute;mero de serie</b></td><td width="80%"> {{ $okidata->nserie }} </td>
             </tr>
             <tr>
-              <td width="20%"><b>Tipo de conexión</b></td><td width="80%"> {{ $okidata->sector->tipo_conexion }} </td>
+              <td width="20%"><b>Tipo de conexión</b></td><td width="80%"> {{ $okidata->tipo_conexion }} </td>
             </tr>
             <tr>
               <td width="20%"><b>Sector</b></td><td width="80%"> {{ $okidata->sector->nombre }} </td>

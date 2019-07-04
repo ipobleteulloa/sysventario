@@ -34,6 +34,9 @@
               <td width="20%"><b>Modelo</b></td><td width="80%"> {{ $zebra->modelo }} </td>
             </tr>
             <tr>
+              <td width="20%"><b>N&uacute;mero de serie</b></td><td width="80%"> {{ $zebra->nserie }} </td>
+            </tr>
+            <tr>
               <td width="20%"><b>Tipo de conexi&oacute;n</b></td><td width="80%"> {{ $zebra->tipo_conexion }} </td>
             </tr>      
             <tr>

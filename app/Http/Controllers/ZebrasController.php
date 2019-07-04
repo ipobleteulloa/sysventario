@@ -52,7 +52,7 @@ class ZebrasController extends Controller
             'sector_id' => 'required'
         ]);
 
-        $zeb = Zebras::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id', 'sector_id'])));
+        $zeb = Zebras::create(request((['nombre', 'modelo', 'nserie', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id', 'sector_id'])));
         $lastzebid = $zeb->id;
         if (strlen($lastzebid) == 1) 
             $codigo = "ZEB00".$lastzebid;
@@ -115,7 +115,7 @@ class ZebrasController extends Controller
                 'sector_id' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id']));
+            $modificaciones = request((['nombre', 'modelo', 'nserie', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id']));
             $zebra->update($modificaciones);
         }
         return redirect('/zebras');

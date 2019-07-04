@@ -51,7 +51,7 @@ class OkidataController extends Controller
             'sector_id' => 'required'
         ]);
 
-        $oki = Okidata::create(request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id'])));
+        $oki = Okidata::create(request((['nombre', 'modelo', 'nserie', 'ubicacion', 'tipo_conexion', 'estado_id', 'sector_id'])));
         $lastokiid = $oki->id;
         if (strlen($lastokiid) == 1) 
             $codigo = "OKI00".$lastokiid;
@@ -113,7 +113,7 @@ class OkidataController extends Controller
                 'sector_id' => 'required'
             ]);
         
-            $modificaciones = request((['nombre', 'modelo', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'sector_id']));
+            $modificaciones = request((['nombre', 'modelo', 'nserie', 'ubicacion', 'tipo_conexion', 'estado_id', 'poseeusb', 'sector_id']));
             $okidata->update($modificaciones);
         }
         return redirect('/okidatas');

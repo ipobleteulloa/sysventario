@@ -11,7 +11,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleInputName">C&oacute;digo</label>
+                <label for="InputName">C&oacute;digo</label>
                 <input class="form-control" id="InputCodigo" name="codigo" type="text" value="{{ $zebra->codigo }}" readonly>
               </div>
             </div>
@@ -19,15 +19,15 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleInputName">Nombre zebra</label>
+                <label for="InputNombre">Nombre zebra</label>
                 <input class="form-control" id="InputNombre" name="nombre" type="text" value="{{ $zebra->nombre }}" required>
               </div>
             </div>
-          </div>  
+          </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-              <label for="exampleInputEmail1">Modelo</label>
+              <label for="InputModelo">Modelo</label>
               <input class="form-control" id="InputModelo" name="modelo" type="text" value="{{ $zebra->modelo }}" required>
               </div>
             </div>
@@ -35,7 +35,15 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Ubicaci&oacute;n  </label>
+              <label for="InputNSerie">N&uacute;mero de serie</label>
+              <input class="form-control" id="InputNSerie" name="nserie" type="text" value="{{ $zebra->nserie }}" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="ConfirmPassword">Ubicaci&oacute;n  </label>
                 <input class="form-control" id="InputUbicacion" name="ubicacion" type="text" value="{{ $zebra->ubicacion }}" >
               </div>
             </div>
@@ -43,7 +51,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">Tipo de conexi&oacute;n  </label>
+                <label for="ConfirmPassword">Tipo de conexi&oacute;n  </label>
                 <input class="form-control" id="InputTipoConexion" name="tipo_conexion" type="text" value="{{ $zebra->tipo_conexion }}" >
               </div>
             </div>
